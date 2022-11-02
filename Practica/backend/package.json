@@ -9,7 +9,7 @@
   "author": "Omar Arias Fernández",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.0",
+    "axios": "^0.21.4",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "neo4j-driver": "^4.1.2",

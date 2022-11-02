@@ -32,7 +32,7 @@
         <div id="comunidad" style="float:left; margin-right: 100px">
           <div><strong>COMUNIDAD AUTONOMA</strong></div>
           <v-radio-group v-model="sitio.comunidad">
-            <v-radio v-for="pos in comunidades" :key="pos" :label="`${pos}`" :value="pos"></v-radio>
+            <v-radio v-for="com in comunidades" :key="com" :label="`${com}`" :value="com"></v-radio>
           </v-radio-group>
         </div>
         <!-- div para el textfield de la edad -->
@@ -76,7 +76,7 @@
           <v-text-field v-model="sitio.comida" label="Entero del 0 al 10" :rules="rules" outlined ></v-text-field>
         </div>
 
-        <div id="botonBuscarJugador" class="text-center" style="float:left">
+        <div id="botonBuscarSitio" class="text-center" style="float:left">
           <v-btn rounded color="primary" v-on:click= "buscarSitios()"> BUSCAR SITIOS </v-btn>
         </div>
       </div>
@@ -86,7 +86,7 @@
         Si no sabes a donde ir, escribe la comunidad autónoma y se mostrarán algunos ejemplos aleatorios.
         <br />
 
-        <!-- Botón para escoger tipo de jugador -->
+        <!-- Botón para escoger comunidad autonoma -->
         <v-row align="center" style="float:left; width:40%; padding-right:40px">
           <v-col cols="12">
             <v-select v-model="comunidadRec" :items="comunidades" :menu-props="{ top: true, offsetY: true }" label="Escoge una comunidad"></v-select>
@@ -204,19 +204,24 @@ export default {
       naturaleza: '',
       fiesta:'',
       comida:'',
+      queVer:'',
     },
+    comunidad: '',
+    provincia: '',
+    costaInterior: '',
+    ruralUrbano: '',
+    descansoTurismo: '',
     //items: ['Defensive rebounder', 'Playmaker', 'Offensive rebounder', '3&D', 'Defensive Player', 'All-around player'],
     //top: ['Top 3', 'Top 10', 'Top 15', 'Top 25'],
-    estilo:"",
-    numJugadores: 0,
-    posicion:'',
+    comunidadRec:'',
     rules: undefined,
     icon: undefined
   }),
   methods:{
     buscarSitios(){
             //Comprobamos que haya introducido algun valor en todos los parámetros de búsqueda necesarios
-            if(this.sitio.comunidad == ''){
+            //if(this.sitio.comunidad == '' || this.sitio.provincia == ''){
+              if(this.sitio.comunidad == ''){
                 //Mensaje de error
                 Swal.fire({
                   title: '¡BÚSQUEDA INCOMPLETA!',
@@ -235,7 +240,9 @@ export default {
                 this.$store.state.sitio.naturaleza = this.sitio.naturaleza,
                 this.$store.state.sitio.fiesta = this.sitio.fiesta,
                 this.$store.state.sitio.comida = this.sitio.comida,
-
+                this.$store.state.sitio.queVer = this.sitio.queVer,
+                this.$store.state.comunidadRec=this.comunidadRec,
+                console.log("HOLA "+this.$store.state.comunidadRec);
 
                 //Redireccionamos a sitios, allí se hará la consulta
                 this.$router.push('/Sitios');

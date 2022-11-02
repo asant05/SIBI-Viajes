@@ -23,7 +23,7 @@
     <br>
 
     <div>
-      <v-data-table :headers="headers" :items="jugadores" :items-per-page="15" class="elevation-1"></v-data-table>
+      <v-data-table :headers="headers" :items="sitios" :items-per-page="15" class="elevation-1"></v-data-table>
     </div>
 
     <!-- Pie de pagina -->
@@ -154,31 +154,33 @@ export default {
     sitios: [],
     //jugadores:[],
     sheet: false,
-    //Objeto jugador para almacenar los datos y pasárselos a la base de datos como parámetro
+    //Objeto sitio para almacenar los datos y pasárselos a la base de datos como parámetro
     sitio: {
-      comunidad: '',
-      provincia: '',
-      costaInterior: '',
-      ruralUrbano: '',
-      descansoTurismo: '',
-      monumentos: '',
-      naturaleza: '',
-      fiesta:'',
-      comida:'',
+      comunidad: undefined,
+      provincia: undefined,
+      costaInterior: undefined,
+      ruralUrbano: undefined,
+      descansoTurismo: undefined,
+      monumentos: undefined,
+      naturaleza: undefined,
+      fiesta:undefined,
+      comida:undefined,
     },
     comunidades: ["Galicia", "Asturias", "Cantabria", "Pais Vasco", "Navarra", "Aragon",
     "Cataluna", "La Rioja", "Castilla y Leon", "Madrid", "Comunidad Valenciana",
     "Castilla La Mancha", "Extremadura", "Murcia", "Andalucia" ],    
     //items: ['Jugador defensivo', 'Playmaker', 'Jugador ofensivo', '3-And-D'],
     //top: ['Top 3', 'Top 10', 'Top 15'],
-    comunidad:"",
-    estilo:"",
-    numJugadores: 0,
+    comunidad:'',
+    provincia: '',
+    costaInterior: '',
+    ruralUrbano: '',
+    descansoTurismo: '',
     rules: undefined,
     icon: undefined
   }),
     mounted(){
-      axios.get('http://localhost:3000/lookPlayers',{
+      axios.get('http://localhost:3000/buscandoSitios',{
         params:{
           /*edad: this.$store.state.jugador.edad,
           posicion: this.$store.state.jugador.posicion,
@@ -189,29 +191,30 @@ export default {
           rebotes: this.$store.state.jugador.rebotes,
           asistencias: this.$store.state.jugador.asistencias,*/
 
-          comunidad: this.$store.state.sitio.comunidad = this.sitio.comunidad,
-          provincia: this.$store.state.sitio.provincia = this.sitio.provincia,
-          costaInterior: this.$store.state.sitio.costaInterior = this.sitio.costaInterior,
-          ruralUrbano: this.$store.state.sitio.ruralUrbano = this.sitio.ruralUrbano,
-          descansoTurismo: this.$store.state.sitio.descansoTurismo = this.sitio.descansoTurismo,
-          monumentos: this.$store.state.sitio.monumentos = this.sitio.monumentos,
-          naturaleza: this.$store.state.sitio.naturaleza = this.sitio.naturaleza,
-          fiesta: this.$store.state.sitio.fiesta = this.sitio.fiesta,
-          comida: this.$store.state.sitio.comida = this.sitio.comida,
+          comunidad: this.$store.state.sitio.comunidad,
+          provincia: this.$store.state.sitio.provincia,
+          costaInterior: this.$store.state.sitio.costaInterior,
+          ruralUrbano: this.$store.state.sitio.ruralUrbano,
+          descansoTurismo: this.$store.state.sitio.descansoTurismo,
+          monumentos: this.$store.state.sitio.monumentos,
+          naturaleza: this.$store.state.sitio.naturaleza,
+          fiesta: this.$store.state.sitio.fiesta,
+          comida: this.$store.state.sitio.comida,
+          queVer: this.$store.state.sitio.queVer,  
         }
       }).then(response=>{
         //AQUI RELLENAMOS EL ARRAY DE JUGADORES PARA QUE LOS MUESTRE EN LA TABLA
         //Cada jugador va a venir acompañado de 16 valores, con lo cual cada 16 i cambiamos de jugador
         
-        for (var step = 0; step < response.data.length; step+=16) {
-          this.jugadores.push({ 
+        for (var step = 0; step < response.data.length; step+=5) {
+          this.sitios.push({ 
             "nombre": response.data[step],
-            "edad": response.data[step+1],
-            "posicion": response.data[step+2],
-            "equipo":response.data[step+3],
-            "salario":response.data[step+4],
-            "puntos":response.data[step+5],
-            "rebotes":response.data[step+6],
+            "comunidad": response.data[step+1],
+            "provincia": response.data[step+2],
+            "costaInterior":response.data[step+3],
+            "ruralUrbano":response.data[step+4],
+            "descansoTurismo":response.data[step+5],
+            /*"rebotes":response.data[step+6],
             "rebotesOfensivos":response.data[step+7],
             "rebotesDefensivos":response.data[step+8],
             "robos":response.data[step+9],
@@ -220,7 +223,7 @@ export default {
             "fg":response.data[step+12],
             "ft":response.data[step+13],
             "threep":response.data[step+14],
-            "faltas": response.data[step+15]
+            "faltas": response.data[step+15]*/
           });
         }
       }).catch((e) => {
