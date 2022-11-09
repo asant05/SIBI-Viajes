@@ -156,7 +156,7 @@ export default {
     sheet: false,
     //Objeto sitio para almacenar los datos y pasárselos a la base de datos como parámetro
     sitio: {
-      comunidad: undefined,
+      comunidad: '',
       provincia: undefined,
       costaInterior: undefined,
       ruralUrbano: undefined,
@@ -200,25 +200,25 @@ export default {
           naturaleza: this.$store.state.sitio.naturaleza,
           fiesta: this.$store.state.sitio.fiesta,
           comida: this.$store.state.sitio.comida,
-          queVer: this.$store.state.sitio.queVer,  
+          queVer: this.$store.state.sitio.queVer, 
         }
       }).then(response=>{
-        //AQUI RELLENAMOS EL ARRAY DE JUGADORES PARA QUE LOS MUESTRE EN LA TABLA
-        //Cada jugador va a venir acompañado de 16 valores, con lo cual cada 16 i cambiamos de jugador
+        //AQUI RELLENAMOS EL ARRAY DE SITIOS PARA QUE LOS MUESTRE EN LA TABLA
+        //Cada sitio va a venir acompañado de 16 valores, con lo cual cada 11 i cambiamos de sitio
         
-        for (var step = 0; step < response.data.length; step+=5) {
+        for (var step = 0; step < response.data.length; step+=1) {
           this.sitios.push({ 
             "nombre": response.data[step],
-            "comunidad": response.data[step+1],
+            //"comunidad": response.data[step+1],
             "provincia": response.data[step+2],
-            "costaInterior":response.data[step+3],
-            "ruralUrbano":response.data[step+4],
-            "descansoTurismo":response.data[step+5],
-            /*"rebotes":response.data[step+6],
-            "rebotesOfensivos":response.data[step+7],
-            "rebotesDefensivos":response.data[step+8],
-            "robos":response.data[step+9],
-            "perdidas":response.data[step+10],
+            //"costaInterior":response.data[step+3],
+            //"ruralUrbano":response.data[step+4],
+            //"descansoTurismo":response.data[step+5],
+            /*"monumentos":response.data[step+6],
+            "naturaleza":response.data[step+7],
+            "fiesta":response.data[step+8],
+            "comida":response.data[step+9],
+            "queVer":response.data[step+10],
             "asistencias":response.data[step+11],
             "fg":response.data[step+12],
             "ft":response.data[step+13],

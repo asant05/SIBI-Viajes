@@ -43,18 +43,26 @@
         <!-- div para el textfield del porcentaje de tiros de campo -->
         <div id="costaInterior" style="float:left; margin-right: 50px">
           <div><strong>COSTA O INTERIOR</strong></div>
-          <v-text-field v-model="sitio.costaInterior" label="Costa o Interior" :rules="rules" outlined ></v-text-field>
+          <v-radio-group v-model="sitio.costaInterior">
+            <v-radio v-for="costa in cosInt" :key="costa" :label="`${costa}`" :value="costa"></v-radio>
+          </v-radio-group>
         </div>
         <!-- div para el textfield del porcentaje de tiros de 3 -->
         <div id="ruralUrbano" style="float:left; margin-right: 50px">
           <div><strong>RURAL O URBANO</strong></div>
-          <v-text-field v-model="sitio.ruralUrbano" label="Rural o Urbano" :rules="rules" outlined ></v-text-field>
-        </div>
+          <v-radio-group v-model="sitio.ruralUrbano">
+            <v-radio v-for="rural in rurUrb" :key="rural" :label="`${rural}`" :value="rural"></v-radio>
+          </v-radio-group>        </div>
         <!-- div para el textfield del porcentaje de tiros libres -->
         <div id="descansoTurismo" style="float:left; margin-right: 50px">
           <div><strong>DESCANSO O TURISMO</strong></div>
-          <v-text-field v-model="sitio.descansoTurismo" label="Descanso o Turismo" :rules="rules" outlined ></v-text-field>
-        </div>
+          <v-radio-group v-model="sitio.descansoTurismo">
+            <v-radio v-for="descanso in desTur" :key="descanso" :label="`${descanso}`" :value="descanso"></v-radio>
+          </v-radio-group>        </div>
+          <br> </br>
+          <br> </br>
+          <br> </br>
+
         <!-- div para el textfield de la media de puntos por partido-->
         <div id="monumentos" style="float:left; margin-right: 50px">
           <div><strong>PUNTUACION MINIMA MONUMENTOS</strong></div>
@@ -179,6 +187,9 @@ export default {
     comunidades: ["Galicia", "Asturias", "Cantabria", "Pais Vasco", "Navarra", "Aragon",
     "Cataluna", "La Rioja", "Castilla y Leon", "Madrid", "Comunidad Valenciana",
     "Castilla La Mancha", "Extremadura", "Murcia", "Andalucia" ],    
+    cosInt: ["Costa", "Interior"],
+    rurUrb: ["Rural", "Urbano"],
+    desTur: ["Descanso", "Turismo"],
     sheet: false,
     //Objeto jugador para almacenar los datos y pasárselos a la base de datos como parámetro
     /*jugador: {
@@ -194,6 +205,7 @@ export default {
       asistencias: undefined,
       fg: undefined,
     },*/
+    //Objeto sitio para almacenar los datos y pasárselos a la base de datos como parámetro
     sitio: {
       comunidad: '',
       provincia: '',
@@ -240,9 +252,9 @@ export default {
                 this.$store.state.sitio.naturaleza = this.sitio.naturaleza,
                 this.$store.state.sitio.fiesta = this.sitio.fiesta,
                 this.$store.state.sitio.comida = this.sitio.comida,
-                this.$store.state.sitio.queVer = this.sitio.queVer,
+                //this.$store.state.sitio.queVer = this.sitio.queVer,
                 this.$store.state.comunidadRec=this.comunidadRec,
-                console.log("HOLA "+this.$store.state.comunidadRec);
+                console.log("HOLA "+this.$store.state.sitio.provincia);
 
                 //Redireccionamos a sitios, allí se hará la consulta
                 this.$router.push('/Sitios');

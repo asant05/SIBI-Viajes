@@ -7,6 +7,8 @@ export default new Vuex.Store({
   state: {
     sitio: {
       nombre: '',
+      provincia:'',
+      comunidad:'',
       monumentos: '',
       naturaleza: '',
       fiesta: '',
