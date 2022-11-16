@@ -35,11 +35,6 @@
             <v-radio v-for="com in comunidades" :key="com" :label="`${com}`" :value="com"></v-radio>
           </v-radio-group>
         </div>
-        <!-- div para el textfield de la edad -->
-        <div id="provincia" style="float:left; margin-right: 50px">
-          <div><strong>PROVINCIA</strong></div>
-          <v-text-field v-model="sitio.provincia" label="Provincia ej. Leon" :rules="rules" outlined ></v-text-field>
-        </div>
         <!-- div para el textfield del porcentaje de tiros de campo -->
         <div id="costaInterior" style="float:left; margin-right: 50px">
           <div><strong>COSTA O INTERIOR</strong></div>
@@ -58,30 +53,43 @@
           <div><strong>DESCANSO O TURISMO</strong></div>
           <v-radio-group v-model="sitio.descansoTurismo">
             <v-radio v-for="descanso in desTur" :key="descanso" :label="`${descanso}`" :value="descanso"></v-radio>
-          </v-radio-group>        </div>
-          <br> </br>
-          <br> </br>
-          <br> </br>
+          </v-radio-group>        
+        </div>
+        <div><pre>
 
+
+
+
+
+        </pre></div>
+        <div><strong>PUNTUACION MINIMA:</strong></div>
         <!-- div para el textfield de la media de puntos por partido-->
         <div id="monumentos" style="float:left; margin-right: 50px">
-          <div><strong>PUNTUACION MINIMA MONUMENTOS</strong></div>
-          <v-text-field v-model="sitio.monumentos" label="Entero del 0 al 10" :rules="rules" outlined ></v-text-field>
+          <div><strong>MONUMENTOS</strong></div>
+          <v-col cols="12">
+            <v-select v-model="sitio.monumentos" :items="enteros" :menu-props="{ top: true, offsetY: true }" label="Escoge un entero"></v-select>
+          </v-col>
         </div>
         <!-- div para el textfield de la media de rebotes por partido-->
         <div id="naturaleza" style="float:left; margin-right: 50px">
-          <div><strong>PUNTUACION MINIMA NATURALEZA</strong></div>
-          <v-text-field v-model="sitio.naturaleza" label="Entero del 0 al 10" :rules="rules" outlined ></v-text-field>
+          <div><strong>NATURALEZA</strong></div>
+          <v-col cols="12">
+            <v-select v-model="sitio.naturaleza" :items="enteros" :menu-props="{ top: true, offsetY: true }" label="Escoge un entero"></v-select>
+          </v-col>        
         </div>
         <!-- div para el textfield de la media de asistencias por partido -->
         <div id="fiesta" style="float:left; margin-right: 50px">
-          <div><strong>PUNTUACION MINIMA FIESTA</strong></div>
-          <v-text-field v-model="sitio.fiesta" label="Entero del 0 al 10" :rules="rules" outlined ></v-text-field>
+          <div><strong>FIESTA</strong></div>
+          <v-col cols="12">
+            <v-select v-model="sitio.fiesta" :items="enteros" :menu-props="{ top: true, offsetY: true }" label="Escoge un entero"></v-select>
+          </v-col>        
         </div>
         <!-- div para el textfield de la media de asistencias por partido -->
         <div id="comida" style="float:left; margin-right: 50px">
-          <div><strong>PUNTUACION MINIMA COMIDA</strong></div>
-          <v-text-field v-model="sitio.comida" label="Entero del 0 al 10" :rules="rules" outlined ></v-text-field>
+          <div><strong>COMIDA</strong></div>
+          <v-col cols="12">
+            <v-select v-model="sitio.comida" :items="enteros" :menu-props="{ top: true, offsetY: true }" label="Escoge un entero"></v-select>
+          </v-col>
         </div>
 
         <div id="botonBuscarSitio" class="text-center" style="float:left">
@@ -186,7 +194,8 @@ export default {
   data: () => ({
     comunidades: ["Galicia", "Asturias", "Cantabria", "Pais Vasco", "Navarra", "Aragon",
     "Cataluna", "La Rioja", "Castilla y Leon", "Madrid", "Comunidad Valenciana",
-    "Castilla La Mancha", "Extremadura", "Murcia", "Andalucia" ],    
+    "Castilla La Mancha", "Extremadura", "Murcia", "Andalucia" ], 
+    enteros: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],   
     cosInt: ["Costa", "Interior"],
     rurUrb: ["Rural", "Urbano"],
     desTur: ["Descanso", "Turismo"],
@@ -219,12 +228,9 @@ export default {
       queVer:'',
     },
     comunidad: '',
-    provincia: '',
     costaInterior: '',
     ruralUrbano: '',
     descansoTurismo: '',
-    //items: ['Defensive rebounder', 'Playmaker', 'Offensive rebounder', '3&D', 'Defensive Player', 'All-around player'],
-    //top: ['Top 3', 'Top 10', 'Top 15', 'Top 25'],
     comunidadRec:'',
     rules: undefined,
     icon: undefined
@@ -232,7 +238,6 @@ export default {
   methods:{
     buscarSitios(){
             //Comprobamos que haya introducido algun valor en todos los parámetros de búsqueda necesarios
-            //if(this.sitio.comunidad == '' || this.sitio.provincia == ''){
               if(this.sitio.comunidad == ''){
                 //Mensaje de error
                 Swal.fire({
@@ -244,7 +249,7 @@ export default {
             }else{
                 //Guardamos en la variable global sitio los valores que nos han introducido por pantalla
                 this.$store.state.sitio.comunidad = this.sitio.comunidad,
-                this.$store.state.sitio.provincia = this.sitio.provincia,
+                //this.$store.state.sitio.provincia = this.sitio.provincia,
                 this.$store.state.sitio.costaInterior = this.sitio.costaInterior,
                 this.$store.state.sitio.ruralUrbano = this.sitio.ruralUrbano,
                 this.$store.state.sitio.descansoTurismo = this.sitio.descansoTurismo,
@@ -254,7 +259,7 @@ export default {
                 this.$store.state.sitio.comida = this.sitio.comida,
                 //this.$store.state.sitio.queVer = this.sitio.queVer,
                 this.$store.state.comunidadRec=this.comunidadRec,
-                console.log("HOLA "+this.$store.state.sitio.provincia);
+                console.log("HOLA "+this.$store.state.sitio.monumentos);
 
                 //Redireccionamos a sitios, allí se hará la consulta
                 this.$router.push('/Sitios');

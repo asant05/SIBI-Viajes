@@ -17,15 +17,23 @@
       </v-app-bar>
     </div>
     <br>
+    <div style="background-color: #ffffff">
+      <div text-align="center" style="margin-left: 50px; margin-right: 50px">
+        <br />
+        Bienvenido a Viajar es vivir, aqui podemos ver las opciones de sitios de la comunidad:
+        <br />
+        <strong>{{this.$store.state.sitio.comunidad}}</strong>
+        <br />
+        <br />
+      </div>
+    </div>
     <div id="botonBuscarSitios" class="text-center" style="float:left">
       <v-btn rounded color="primary" v-on:click= "volverAlInicio()"> VOLVER A LA PÁGINA PRINCIPAL </v-btn>
     </div>
     <br>
-
     <div>
       <v-data-table :headers="headers" :items="sitios" :items-per-page="15" class="elevation-1"></v-data-table>
     </div>
-
     <!-- Pie de pagina -->
     <div id="piePagina" >
       <v-footer dark padless >
@@ -90,12 +98,6 @@ export default {
           sortable: false,
           value: 'nombre',
         },
-        {
-          text: 'Comunidad',
-          align: 'start',
-          sortable: false,
-          value: 'comunidad'
-        },
         { text: 'Provincia',
           align: 'start',
           sortable: false,
@@ -152,7 +154,6 @@ export default {
 
     ],
     sitios: [],
-    //jugadores:[],
     sheet: false,
     //Objeto sitio para almacenar los datos y pasárselos a la base de datos como parámetro
     sitio: {
@@ -169,8 +170,6 @@ export default {
     comunidades: ["Galicia", "Asturias", "Cantabria", "Pais Vasco", "Navarra", "Aragon",
     "Cataluna", "La Rioja", "Castilla y Leon", "Madrid", "Comunidad Valenciana",
     "Castilla La Mancha", "Extremadura", "Murcia", "Andalucia" ],    
-    //items: ['Jugador defensivo', 'Playmaker', 'Jugador ofensivo', '3-And-D'],
-    //top: ['Top 3', 'Top 10', 'Top 15'],
     comunidad:'',
     provincia: '',
     costaInterior: '',
@@ -182,17 +181,8 @@ export default {
     mounted(){
       axios.get('http://localhost:3000/buscandoSitios',{
         params:{
-          /*edad: this.$store.state.jugador.edad,
-          posicion: this.$store.state.jugador.posicion,
-          fg: this.$store.state.jugador.fg,
-          threep: this.$store.state.jugador.threep,
-          ft: this.$store.state.jugador.ft,
-          puntos: this.$store.state.jugador.puntos,
-          rebotes: this.$store.state.jugador.rebotes,
-          asistencias: this.$store.state.jugador.asistencias,*/
-
           comunidad: this.$store.state.sitio.comunidad,
-          provincia: this.$store.state.sitio.provincia,
+          //provincia: this.$store.state.sitio.provincia,
           costaInterior: this.$store.state.sitio.costaInterior,
           ruralUrbano: this.$store.state.sitio.ruralUrbano,
           descansoTurismo: this.$store.state.sitio.descansoTurismo,
@@ -204,26 +194,20 @@ export default {
         }
       }).then(response=>{
         //AQUI RELLENAMOS EL ARRAY DE SITIOS PARA QUE LOS MUESTRE EN LA TABLA
-        //Cada sitio va a venir acompañado de 16 valores, con lo cual cada 11 i cambiamos de sitio
+        //Cada sitio va a venir acompañado de 10 valores, con lo cual cada 10 i cambiamos de sitio
         
-        for (var step = 0; step < response.data.length; step+=1) {
+        for (var step = 0; step < response.data.length; step+=10) {
           this.sitios.push({ 
             "nombre": response.data[step],
-            //"comunidad": response.data[step+1],
-            "provincia": response.data[step+2],
-            //"costaInterior":response.data[step+3],
-            //"ruralUrbano":response.data[step+4],
-            //"descansoTurismo":response.data[step+5],
-            /*"monumentos":response.data[step+6],
-            "naturaleza":response.data[step+7],
-            "fiesta":response.data[step+8],
-            "comida":response.data[step+9],
-            "queVer":response.data[step+10],
-            "asistencias":response.data[step+11],
-            "fg":response.data[step+12],
-            "ft":response.data[step+13],
-            "threep":response.data[step+14],
-            "faltas": response.data[step+15]*/
+            "provincia": response.data[step+1],
+            "costaInterior":response.data[step+2],
+            "ruralUrbano":response.data[step+3],
+            "descansoTurismo":response.data[step+4],
+            "monumentos":response.data[step+5],
+            "naturaleza":response.data[step+6],
+            "fiesta":response.data[step+7],
+            "comida":response.data[step+8],
+            "queVer":response.data[step+9]
           });
         }
       }).catch((e) => {
@@ -236,7 +220,6 @@ export default {
       },
       resetearSitios(){
         this.sitio.nombre = undefined
-        this.sitio.comunidad = undefined
         this.sitio.provincia = undefined
         this.sitio.costaInterior = undefined
         this.sitio.ruralUrbano = undefined

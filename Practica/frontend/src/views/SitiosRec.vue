@@ -16,9 +16,16 @@
         </div>
       </v-app-bar>
     </div>
-    <br>
-      <h3>Estos son los sitios recomendado aleatoriamenete de la comunidad autónoma de {{ this.$store.state.comunidadRec }}</h3>
-    <br>
+    <div style="background-color: #ffffff">
+      <div text-align="center" style="margin-left: 50px; margin-right: 50px">
+        <br />
+        Bienvenido a Viajar es vivir, aqui podemos ver las opciones aleatorias de sitios de la comunidad:
+        <br />
+        <strong>{{this.$store.state.sitio.comunidad}}</strong>
+        <br />
+        <br />
+      </div>
+    </div>
     <div id="botonBuscarSitios" class="text-center" style="float:left">
       <v-btn rounded color="primary" v-on:click= "volverAlInicio()"> VOLVER A LA PÁGINA PRINCIPAL </v-btn>
     </div>
