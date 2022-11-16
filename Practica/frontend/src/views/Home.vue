@@ -25,32 +25,32 @@
         tu destino ideal para aquellos días libres en los que quieras 
         escaparte.
         <br />
-        <strong>PARÁMETROS DE BÚSQUEDA:</strong>
+        <strong>Si sabes lo que buscas, introduce los parámetros de búsqueda:</strong>
         <br />
         <br />
         <!-- div para el radiobutton de la posición -->
-        <div id="comunidad" style="float:left; margin-right: 100px">
-          <div><strong>COMUNIDAD AUTONOMA</strong></div>
+        <div id="comunidad" style="float:left; margin-right: 80px">
+          <div>COMUNIDAD AUTONOMA</div>
           <v-radio-group v-model="sitio.comunidad">
             <v-radio v-for="com in comunidades" :key="com" :label="`${com}`" :value="com"></v-radio>
           </v-radio-group>
         </div>
         <!-- div para el textfield del porcentaje de tiros de campo -->
-        <div id="costaInterior" style="float:left; margin-right: 50px">
-          <div><strong>COSTA O INTERIOR</strong></div>
+        <div id="costaInterior" style="float:left; margin-right: 150px">
+          <div>COSTA O INTERIOR</div>
           <v-radio-group v-model="sitio.costaInterior">
             <v-radio v-for="costa in cosInt" :key="costa" :label="`${costa}`" :value="costa"></v-radio>
           </v-radio-group>
         </div>
         <!-- div para el textfield del porcentaje de tiros de 3 -->
-        <div id="ruralUrbano" style="float:left; margin-right: 50px">
-          <div><strong>RURAL O URBANO</strong></div>
+        <div id="ruralUrbano" style="float:left; margin-right: 150px">
+          <div>RURAL O URBANO</div>
           <v-radio-group v-model="sitio.ruralUrbano">
             <v-radio v-for="rural in rurUrb" :key="rural" :label="`${rural}`" :value="rural"></v-radio>
           </v-radio-group>        </div>
         <!-- div para el textfield del porcentaje de tiros libres -->
-        <div id="descansoTurismo" style="float:left; margin-right: 50px">
-          <div><strong>DESCANSO O TURISMO</strong></div>
+        <div id="descansoTurismo" style="float:left; margin-right: 150px">
+          <div>DESCANSO O TURISMO</div>
           <v-radio-group v-model="sitio.descansoTurismo">
             <v-radio v-for="descanso in desTur" :key="descanso" :label="`${descanso}`" :value="descanso"></v-radio>
           </v-radio-group>        
@@ -58,55 +58,50 @@
         <div><pre>
 
 
-
-
-
         </pre></div>
-        <div><strong>PUNTUACION MINIMA:</strong></div>
-        <!-- div para el textfield de la media de puntos por partido-->
-        <div id="monumentos" style="float:left; margin-right: 50px">
-          <div><strong>MONUMENTOS</strong></div>
-          <v-col cols="12">
-            <v-select v-model="sitio.monumentos" :items="enteros" :menu-props="{ top: true, offsetY: true }" label="Escoge un entero"></v-select>
-          </v-col>
-        </div>
-        <!-- div para el textfield de la media de rebotes por partido-->
-        <div id="naturaleza" style="float:left; margin-right: 50px">
-          <div><strong>NATURALEZA</strong></div>
-          <v-col cols="12">
-            <v-select v-model="sitio.naturaleza" :items="enteros" :menu-props="{ top: true, offsetY: true }" label="Escoge un entero"></v-select>
-          </v-col>        
-        </div>
-        <!-- div para el textfield de la media de asistencias por partido -->
-        <div id="fiesta" style="float:left; margin-right: 50px">
-          <div><strong>FIESTA</strong></div>
-          <v-col cols="12">
-            <v-select v-model="sitio.fiesta" :items="enteros" :menu-props="{ top: true, offsetY: true }" label="Escoge un entero"></v-select>
-          </v-col>        
-        </div>
-        <!-- div para el textfield de la media de asistencias por partido -->
-        <div id="comida" style="float:left; margin-right: 50px">
-          <div><strong>COMIDA</strong></div>
-          <v-col cols="12">
-            <v-select v-model="sitio.comida" :items="enteros" :menu-props="{ top: true, offsetY: true }" label="Escoge un entero"></v-select>
-          </v-col>
-        </div>
-
         <div id="botonBuscarSitio" class="text-center" style="float:left">
           <v-btn rounded color="primary" v-on:click= "buscarSitios()"> BUSCAR SITIOS </v-btn>
         </div>
+        <div><pre>
+
+
+        </pre></div>
+        <div>PUNTUACION MINIMA:</div>
+        <!-- div para el textfield de la media de puntos por partido-->
+        <div id="monumentos" style="float:left; margin-right: 30px">
+          <div>MONUMENTOS</div>
+            <v-select v-model="sitio.monumentos" :items="enteros" :menu-props="{ top: true, offsetY: true }" label="Escoge entero" style="width:200px"></v-select>
+        </div>
+        <!-- div para el textfield de la media de rebotes por partido-->
+        <div id="naturaleza" style="float:left; margin-right: 30px">
+          <div>NATURALEZA</div>
+            <v-select v-model="sitio.naturaleza" :items="enteros" :menu-props="{ top: true, offsetY: true }" label="Escoge un entero" style="width:200px"></v-select>
+        </div>
+        <!-- div para el textfield de la media de asistencias por partido -->
+        <div id="fiesta" style="float:left; margin-right: 30px">
+          <div>FIESTA</div>
+            <v-select v-model="sitio.fiesta" :items="enteros" :menu-props="{ top: true, offsetY: true }" label="Escoge un entero" style="width:200px"></v-select>
+        </div>
+        <!-- div para el textfield de la media de asistencias por partido -->
+        <div id="comida" style="float:left; margin-right: 0px">
+          <div>COMIDA</div>
+            <v-select v-model="sitio.comida" :items="enteros" :menu-props="{ top: true, offsetY: true }" label="Escoge un entero" style="width:200px"></v-select>
+        </div>
       </div>
 
-      <div id="recomendaciones" style="float:left; margin-left: 50px; margin-right: 50px; margin-top: 50px">
-        <br />
+      <div id="rec" style="float:left; margin-right: 0px">
+        <br /><strong>
         Si no sabes a donde ir, escribe la comunidad y se mostrarán sitios ordenados por la caracteristica seleccionada.
-        <br />
+      </strong><br />
 
         <!-- Botón para escoger comunidad autonoma -->
         <v-row style="float:left; width:40%; padding-right:40px">
           <v-col cols="12">
             <v-select v-model="comunidadRec" :items="comunidades" :menu-props="{ top: true, offsetY: true }" label="Escoge comunidad"></v-select>
           </v-col>
+        </v-row>
+        <v-row style="float:left; width:40%; padding-right:40px">
+
           <v-col cols="12">
             <v-select v-model="orden" :items="ordenAtributos" :menu-props="{ top: true, offsetY: true }" label="Escoge orden"></v-select>
           </v-col>
@@ -121,16 +116,13 @@
 
         <!-- Finaliza el div de las recomendaciones -->
       </div>
-      <div id="recomendaciones" style="float:left; margin-left: 50px; margin-right: 50px; margin-top: 50px">
-        <br />
-        Si solo sabes que tipo de viaje necesitas, elige la opcion mas adecuada.
-        <br />
+
+      <div id="recomendaciones2" style="float:left; margin-left:10px; margin-right: 50px; margin-top: 0px">
+        <br /><strong>Si solo sabes que tipo de viaje necesitas, elige la opcion mas adecuada.</strong><br />
 
         <!-- Botón para escoger estilo de busqueda -->
-        <v-row style="float:left; width:40%; padding-right:40px">
-          <v-col cols="12">
+        <v-row style="float:left; width:40%; padding-right:40px; margin-left:0px ">
             <v-select v-model="estiloViaje" :items="estilos" :menu-props="{ top: true, offsetY: true }" label="Escoge estilo "></v-select>
-          </v-col>
         </v-row>
 
         <!-- Boton para comenzar la búsqueda -->
