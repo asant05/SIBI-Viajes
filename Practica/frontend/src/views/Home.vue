@@ -21,7 +21,7 @@
     <div style="background-color: #ffffff">
       <div text-align="center" style="margin-left: 50px; margin-right: 50px">
         <br />
-        Bienvenido a Viajar es vivir, la apliación en la cual podrás buscar
+        Bienvenido a Viajar es vivir, la aplicación en la cual podrás buscar
         tu destino ideal para aquellos días libres en los que quieras 
         escaparte.
         <br />
@@ -99,42 +99,51 @@
 
       <div id="recomendaciones" style="float:left; margin-left: 50px; margin-right: 50px; margin-top: 50px">
         <br />
-        Si no sabes a donde ir, escribe la comunidad autónoma y se mostrarán algunos ejemplos aleatorios.
+        Si no sabes a donde ir, escribe la comunidad y se mostrarán sitios ordenados por la caracteristica seleccionada.
         <br />
 
         <!-- Botón para escoger comunidad autonoma -->
-        <v-row align="center" style="float:left; width:40%; padding-right:40px">
+        <v-row style="float:left; width:40%; padding-right:40px">
           <v-col cols="12">
-            <v-select v-model="comunidadRec" :items="comunidades" :menu-props="{ top: true, offsetY: true }" label="Escoge una comunidad"></v-select>
+            <v-select v-model="comunidadRec" :items="comunidades" :menu-props="{ top: true, offsetY: true }" label="Escoge comunidad"></v-select>
+          </v-col>
+          <v-col cols="12">
+            <v-select v-model="orden" :items="ordenAtributos" :menu-props="{ top: true, offsetY: true }" label="Escoge orden"></v-select>
           </v-col>
         </v-row>
-
-        <!-- Botón para escoger el numero de jugadores a mostrar 
-        <v-row align="center" style="float:left; width:33%; padding-right:40px">
-          <v-col cols="12">
-            <v-select v-model="numJugadores" :items="top" :menu-props="{ top: true, offsetY: true }" label="Escoge el número de jugadores"></v-select>
-          </v-col>
-        </v-row>
-
-         Botón para escoger la posicion del jugador 
-        <v-row align="center" style="float:left; width:30%">
-          <v-col cols="12">
-            <v-select v-model="posicion" :items="comunidades" :menu-props="{ top: true, offsetY: true }" label="Escoge la posición del jugador"></v-select>
-          </v-col>
-        </v-row> -->
 
         <!-- Boton para comenzar la búsqueda -->
-        <v-row align="center" style="float:left">
+        <v-row style="float:left">
           <v-col cols="12">
             <v-btn v-on:click= "recomendarSitios()" rounded color="primary" dark >RECOMENDAR SITIOS</v-btn>
           </v-col>
-          
         </v-row>
 
         <!-- Finaliza el div de las recomendaciones -->
       </div>
+      <div id="recomendaciones" style="float:left; margin-left: 50px; margin-right: 50px; margin-top: 50px">
+        <br />
+        Si solo sabes que tipo de viaje necesitas, elige la opcion mas adecuada.
+        <br />
+
+        <!-- Botón para escoger estilo de busqueda -->
+        <v-row style="float:left; width:40%; padding-right:40px">
+          <v-col cols="12">
+            <v-select v-model="estiloViaje" :items="estilos" :menu-props="{ top: true, offsetY: true }" label="Escoge estilo "></v-select>
+          </v-col>
+        </v-row>
+
+        <!-- Boton para comenzar la búsqueda -->
+        <v-row style="float:left">
+          <v-col cols="12">
+            <v-btn v-on:click= "buscarOpciones()" rounded color="primary" dark >BUSCAR OPCIONES</v-btn>
+          </v-col>
+        </v-row>
+
+        <!-- Finaliza el div de las recomendaciones -->
+      </div>   
         <!-- Finaliza el div de los elementos de busqueda -->
-    </div>
+    </div> 
 
     <!-- Pie de pagina -->
     <div id="piePagina" >
@@ -143,13 +152,13 @@
         <v-card-title class="teal" >
           <strong class="subheading">Si tiene alguna duda o consejo que darlos, no dude en escribirnos!</strong>
           <v-spacer></v-spacer>
-          <v-btn href="https://www.linkedin.com/in/omar-arias-fern%C3%A1ndez-7a71871b7/" target="_blank" :key="icon" class="mx-4" dark icon>
+          <v-btn href="mailto:asantf05@estudiantes.unileon.es?Subject=Dudas%20sobre%20ViajarEsVivir" target="_blank" :key="icon" class="mx-4" dark icon>
             <v-icon size="24px">mdi-message</v-icon>
           </v-btn>
         </v-card-title>
 
         <v-card-text class="py-2 white--text text-center">
-          {{ new Date().getFullYear() }} —
+          {{ new Date().getFullYear() }} -
           <strong
             >Curso 22/23 Sistemas de información de gestión y business intelligence<br />
             <v-bottom-sheet v-model="sheet" inset>
@@ -199,21 +208,9 @@ export default {
     cosInt: ["Costa", "Interior"],
     rurUrb: ["Rural", "Urbano"],
     desTur: ["Descanso", "Turismo"],
+    estilos: ["Festividad", "Desconexion", "Playa", "Cultural"],
+    ordenAtributos: ["Nombre Sitio", "Provincia", "Costa o Interior", "Rural o Urbano", "Descanso o Turismo", "Monumentos", "Naturaleza", "Fiesta", "Comida"],
     sheet: false,
-    //Objeto jugador para almacenar los datos y pasárselos a la base de datos como parámetro
-    /*jugador: {
-      nombre: '',
-      equipo:'',
-      salario: '',
-      puntos: undefined,
-      rebotes: undefined,
-      rebotesOfensivos: undefined,
-      rebotesDefensivos: undefined,
-      robos: undefined,
-      perdidas: undefined,
-      asistencias: undefined,
-      fg: undefined,
-    },*/
     //Objeto sitio para almacenar los datos y pasárselos a la base de datos como parámetro
     sitio: {
       comunidad: '',
@@ -232,68 +229,78 @@ export default {
     ruralUrbano: '',
     descansoTurismo: '',
     comunidadRec:'',
+    orden:'',
+    estiloViaje: '',
     rules: undefined,
     icon: undefined
   }),
   methods:{
     buscarSitios(){
-            //Comprobamos que haya introducido algun valor en todos los parámetros de búsqueda necesarios
-              if(this.sitio.comunidad == ''){
-                //Mensaje de error
-                Swal.fire({
-                  title: '¡BÚSQUEDA INCOMPLETA!',
-                  text: 'Debes introducir al menos la comunidad del sitio que quieres buscar',
-                  icon: 'error',
-                  confirmButtonText: 'Aceptar'
-                })
-            }else{
-                //Guardamos en la variable global sitio los valores que nos han introducido por pantalla
-                this.$store.state.sitio.comunidad = this.sitio.comunidad,
-                //this.$store.state.sitio.provincia = this.sitio.provincia,
-                this.$store.state.sitio.costaInterior = this.sitio.costaInterior,
-                this.$store.state.sitio.ruralUrbano = this.sitio.ruralUrbano,
-                this.$store.state.sitio.descansoTurismo = this.sitio.descansoTurismo,
-                this.$store.state.sitio.monumentos = this.sitio.monumentos,
-                this.$store.state.sitio.naturaleza = this.sitio.naturaleza,
-                this.$store.state.sitio.fiesta = this.sitio.fiesta,
-                this.$store.state.sitio.comida = this.sitio.comida,
-                //this.$store.state.sitio.queVer = this.sitio.queVer,
-                this.$store.state.comunidadRec=this.comunidadRec,
-                console.log("HOLA "+this.$store.state.sitio.monumentos);
+      //Comprobamos que haya introducido algun valor en los parámetros de búsqueda necesarios
+        if(this.sitio.comunidad == ''){
+          //Mensaje de error
+          Swal.fire({
+            title: '¡BÚSQUEDA INCOMPLETA!',
+            text: 'Debes introducir al menos la comunidad del sitio que quieres buscar',
+            icon: 'error',
+            confirmButtonText: 'Aceptar'
+          })
+        }else{
+          //Guardamos en la variable global sitio los valores que nos han introducido por pantalla
+            this.$store.state.sitio.comunidad = this.sitio.comunidad,
+            this.$store.state.sitio.costaInterior = this.sitio.costaInterior,
+            this.$store.state.sitio.ruralUrbano = this.sitio.ruralUrbano,
+            this.$store.state.sitio.descansoTurismo = this.sitio.descansoTurismo,
+            this.$store.state.sitio.monumentos = this.sitio.monumentos,
+            this.$store.state.sitio.naturaleza = this.sitio.naturaleza,
+            this.$store.state.sitio.fiesta = this.sitio.fiesta,
+            this.$store.state.sitio.comida = this.sitio.comida,
+            this.$store.state.comunidadRec=this.comunidadRec,
+            //console.log("HOLA "+this.$store.state.sitio.monumentos);
 
-                //Redireccionamos a sitios, allí se hará la consulta
-                this.$router.push('/Sitios');
-            }
-        },
-        recomendarSitios(){
-            //Comprobamos que haya introducido algun valor en todos los parámetros de búsqueda
-            if(this.comunidadRec == '' ){
-                //Mensaje de error
-                Swal.fire({
-                  title: '  ¡BÚSQUEDA INCOMPLETA!',
-                  text: 'Debes introducir la comunidad donde buscar los sitios',
-                  icon: 'error',
-                  confirmButtonText: 'Aceptar'
-                })
-            }else{
-                //Guardamos el número de jugadores que desea el usuario y el estilo que ha escogido
-                /*if(this.numJugadores=='Top 3'){
-                  this.numJugadores=3
-                }else if(this.numaJugadores=='Top 10'){
-                  this.numJugadores=10
-                }else if(this.numJugadores=='Top 15'){
-                  this.numJugadores=15
-                }else{
-                  this.numJugadores=25
-                }*/
-                this.$store.state.comunidadRec=this.comunidadRec;
-                //this.$store.state.numJugadores = this.numJugadores
-                //this.$store.state.estilo = this.estilo
-                //this.$store.state.posicion= this.posicion
-                //Redireccionamos a sitiosRec, allí se hará la consulta
-                this.$router.push('/SitiosRec');
-            }
+          //Redireccionamos a sitios, allí se hará la consulta
+            this.$router.push('/Sitios');
         }
-    }
+    },
+    recomendarSitios(){
+      //Comprobamos que haya introducido algun valor en todos los parámetros de búsqueda
+        if(this.comunidadRec == '' || this.orden == ''){
+          //Mensaje de error
+          Swal.fire({
+            title: '  ¡BÚSQUEDA INCOMPLETA!',
+            text: 'Debes introducir la comunidad donde buscar los sitios',
+            icon: 'error',
+            confirmButtonText: 'Aceptar'
+          })
+        }else{
+          //Guardamos la comunidad que desea el usuario 
+            this.$store.state.comunidadRec=this.comunidadRec;
+            this.$store.state.orden=this.orden;
+            console.log("La comunidad es "+this.$store.state.comunidadRec+" y el orden es "+this.$store.state.orden);
+          //Redireccionamos a sitiosRec, allí se hará la consulta
+            this.$router.push('/SitiosRec');
+        }
+    },
+    
+    buscarOpciones(){
+      //Comprobamos que haya introducido algun valor en todos los parámetros de búsqueda necesarios
+        if(this.estiloViaje == ''){
+          //Mensaje de error
+          Swal.fire({
+            title: '¡BÚSQUEDA INCOMPLETA!',
+            text: 'Debes introducir el estilo de viaje',
+            icon: 'error',
+            confirmButtonText: 'Aceptar'
+          })
+        }else{
+          //Guardamos en la variable global sitio los valores que nos han introducido por pantalla
+            this.$store.state.estiloViaje=this.estiloViaje,
+            console.log("El estilo es  "+this.$store.state.estiloViaje);
+
+          //Redireccionamos a sitios, allí se hará la consulta
+            this.$router.push('/SitiosEstilos');
+        }
+    },
+  }
 };
 </script>

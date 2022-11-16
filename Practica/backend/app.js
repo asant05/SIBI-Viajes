@@ -15,9 +15,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/buscandoSitios", function(req, res) {
-  //console.log(req.query)
-  //console.log("HOLA "+ this.$store.comunidad+" Y ADIOS");
-
   //AQUI HACEMOS LA CONSULTA A LA BASE DE DATOS
   query="MATCH (s:Sitios), (c:comunidad  {nombre: '"+req.query.comunidad+"'}),"+
     " (i:costaInterior), (r:ruralUrbano), (d:descansoTurismo) WHERE (s)-[:PERTENECE_A]->(c) ";
@@ -80,49 +77,263 @@ app.get("/buscandoSitios", function(req, res) {
     }
   });
 });
+
+
+app.get("/recomendandoSitios", function(req, res) {
+  ordenarPor='';
+  if(req.query.orden == "Nombre Sitio"){
+    ordenarPor="s.nombre";
+  }else if(req.query.orden == "Provincia"){
+    ordenarPor="s.provincia";
+  }else if(req.query.orden == "Costa o Interior"){
+    ordenarPor="i.nombre";
+  }else if(req.query.orden == "Rural o Urbano"){
+    ordenarPor="r.nombre";
+  }else if(req.query.orden == "Descanso o Turismo"){
+    ordenarPor="d.nombre";
+  }else if(req.query.orden == "Monumentos"){
+    ordenarPor="s.monumentos DESC";
+  }else if(req.query.orden == "Naturaleza"){
+    ordenarPor="s.naturaleza DESC";
+  }else if(req.query.orden == "Fiesta"){
+    ordenarPor="s.fiesta DESC";
+  }else if(req.query.orden == "Comida"){
+    ordenarPor="s.comida DESC";
+  }
+  //AQUI HACEMOS LA CONSULTA A LA BASE DE DATOS
+  query="MATCH (s:Sitios), (c:comunidad  {nombre: '"+req.query.comunidadRec+"'}),"+
+    " (i:costaInterior), (r:ruralUrbano), (d:descansoTurismo) WHERE (s)-[:PERTENECE_A]->(c) ";
+  query+= "AND (s)-[:ES_COSTA_O_INTERIOR]->(i)"  
+  query+= "AND (s)-[:ES_RURAL_O_URBANO]->(r)"
+  query+= "AND (s)-[:ES_DESCANSO_O_TURISMO]->(d)"
+  query+=" RETURN s.nombre, s.provincia, i.nombre, r.nombre, d.nombre, s.monumentos, s.naturaleza, s.fiesta, s.comida, s.queVer ORDER BY "+ordenarPor+" ";
+
+  var lista=[]
+  const consultaFiltro= driver.session();
+  consultaFiltro.run(query).subscribe({
+    onNext: function(result) {
+        lista.push(result.get(0));
+        lista.push(result.get(1));
+        lista.push(result.get(2));
+        lista.push(result.get(3));
+        lista.push(result.get(4));
+        lista.push(result.get(5).low);
+        lista.push(result.get(6).low);
+        lista.push(result.get(7).low);
+        lista.push(result.get(8).low);
+        lista.push(result.get(9));
+    },
+    onCompleted: function() {
+      res.send(lista);
+      consultaFiltro.close();
+    },
+    onError: function(error) {
+      console.log(error);
+    }
+  });
+});
+
+
+//FUNCION PARA DEVOLVER LA MEDIA DE FIESTA DE LOS SITIOS
+app.get("/avgFiesta", function(req, res) {
+  //AQUI HACEMOS LA CONSULTA A LA BASE DE DATOS
+  query = "MATCH (s:Sitios) return avg(s.fiesta)"
+  var lista=[]
+  const consultaFiesta = driver.session();
+  consultaFiesta.run(query).subscribe({
+    onNext: function(result) {
+        lista.push(result.get(0));
+    },
+    onCompleted: function() {
+      consultaFiesta.close();
+      res.send(lista);
+    },
+    onError: function(error) {
+      console.log(error);
+    }
+  });
+});
+
+//FUNCION PARA OBTENER SITIOS CON FIESTAS
+app.get("/busquedaFestividad", function(req, res) {
+  //AQUI HACEMOS LA CONSULTA A LA BASE DE DATOS
+  query="MATCH (s:Sitios), (c:comunidad),(i:costaInterior), (r:ruralUrbano),"+
+      "(d:descansoTurismo) WHERE (s)-[:PERTENECE_A]->(c) ";
+  query+= "AND (s)-[:ES_COSTA_O_INTERIOR]->(i)"  
+  query+= "AND (s)-[:ES_RURAL_O_URBANO]->(r)"
+  query+= "AND (s)-[:ES_DESCANSO_O_TURISMO]->(d)"
+  query+= " AND s.fiesta>"+req.query.avgFiesta+""
+  query+=" RETURN s.nombre, s.provincia, i.nombre, r.nombre, d.nombre, s.monumentos, s.naturaleza, s.fiesta, s.comida, s.queVer ORDER BY s.fiesta DESC ";
+  var lista=[]
+  const consultaFiesta = driver.session();
+  consultaFiesta.run(query).subscribe({
+    onNext: function(result) {
+      lista.push(result.get(0));
+      lista.push(result.get(1));
+      lista.push(result.get(2));
+      lista.push(result.get(3));
+      lista.push(result.get(4));
+      lista.push(result.get(5).low);
+      lista.push(result.get(6).low);
+      lista.push(result.get(7).low);
+      lista.push(result.get(8).low);
+      lista.push(result.get(9));
+    },
+    onCompleted: function() {
+      consultaFiesta.close();
+      res.send(lista);
+    },
+    onError: function(error) {
+      console.log(error);
+    }
+  });
+});
+
+//FUNCION PARA DEVOLVER LA MEDIA DE NATURALEZA DE LOS SITIOS
+app.get("/avgNaturaleza", function(req, res) {
+  //AQUI HACEMOS LA CONSULTA A LA BASE DE DATOS
+  query = "MATCH (s:Sitios) return avg(s.naturaleza)"
+  var lista=[]
+  const consultaNaturaleza = driver.session();
+  consultaNaturaleza.run(query).subscribe({
+    onNext: function(result) {
+        lista.push(result.get(0));
+    },
+    onCompleted: function() {
+      consultaNaturaleza.close();
+      res.send(lista);
+    },
+    onError: function(error) {
+      console.log(error);
+    }
+  });
+});
+
+//FUNCION PARA OBTENER SITIOS CON DESCONEXION: mayor valor de naturaleza de la media, que sea descanso y rural
+app.get("/busquedaNaturaleza", function(req, res) {
+  //AQUI HACEMOS LA CONSULTA A LA BASE DE DATOS
+  query="MATCH (s:Sitios), (c:comunidad),(i:costaInterior), (r:ruralUrbano),"+
+      "(d:descansoTurismo) WHERE (s)-[:PERTENECE_A]->(c) ";
+  query+= "AND (s)-[:ES_COSTA_O_INTERIOR]->(i)"  
+  query+= "AND (s)-[:ES_RURAL_O_URBANO]->(r {nombre: 'Rural'})"
+  query+= "AND (s)-[:ES_DESCANSO_O_TURISMO]->(d {nombre: 'Descanso'})"
+  query+= " AND s.naturaleza>"+req.query.avgNaturaleza+""
+  query+=" RETURN s.nombre, s.provincia, i.nombre, r.nombre, d.nombre, s.monumentos, s.naturaleza, s.fiesta, s.comida, s.queVer ORDER BY s.naturaleza DESC ";
+  var lista=[]
+  const consultaNaturaleza = driver.session();
+  consultaNaturaleza.run(query).subscribe({
+    onNext: function(result) {
+      lista.push(result.get(0));
+      lista.push(result.get(1));
+      lista.push(result.get(2));
+      lista.push(result.get(3));
+      lista.push(result.get(4));
+      lista.push(result.get(5).low);
+      lista.push(result.get(6).low);
+      lista.push(result.get(7).low);
+      lista.push(result.get(8).low);
+      lista.push(result.get(9));
+    },
+    onCompleted: function() {
+      consultaNaturaleza.close();
+      res.send(lista);
+    },
+    onError: function(error) {
+      console.log(error);
+    }
+  });
+});
+
+//FUNCION PARA OBTENER SITIOS CON PLAYA: valor de costa, ordenado por naturaleza
+app.get("/busquedaPlaya", function(req, res) {
+  //AQUI HACEMOS LA CONSULTA A LA BASE DE DATOS
+  query="MATCH (s:Sitios), (c:comunidad),(i:costaInterior), (r:ruralUrbano),"+
+      "(d:descansoTurismo) WHERE (s)-[:PERTENECE_A]->(c) ";
+  query+= "AND (s)-[:ES_COSTA_O_INTERIOR]->(i {nombre: 'Costa'})"  
+  query+= "AND (s)-[:ES_RURAL_O_URBANO]->(r)"
+  query+= "AND (s)-[:ES_DESCANSO_O_TURISMO]->(d)"
+  query+=" RETURN s.nombre, s.provincia, i.nombre, r.nombre, d.nombre, s.monumentos, s.naturaleza, s.fiesta, s.comida, s.queVer ORDER BY s.naturaleza DESC ";
+  var lista=[]
+  const consultaPlaya = driver.session();
+  consultaPlaya.run(query).subscribe({
+    onNext: function(result) {
+      lista.push(result.get(0));
+      lista.push(result.get(1));
+      lista.push(result.get(2));
+      lista.push(result.get(3));
+      lista.push(result.get(4));
+      lista.push(result.get(5).low);
+      lista.push(result.get(6).low);
+      lista.push(result.get(7).low);
+      lista.push(result.get(8).low);
+      lista.push(result.get(9));
+    },
+    onCompleted: function() {
+      consultaPlaya.close();
+      res.send(lista);
+    },
+    onError: function(error) {
+      console.log(error);
+    }
+  });
+});
+
+//FUNCION PARA DEVOLVER LA MEDIA DE NATURALEZA DE LOS SITIOS
+app.get("/avgMonumento", function(req, res) {
+  //AQUI HACEMOS LA CONSULTA A LA BASE DE DATOS
+  query = "MATCH (s:Sitios) return avg(s.monumentos)"
+  var lista=[]
+  const consultaMonumentos = driver.session();
+  consultaMonumentos.run(query).subscribe({
+    onNext: function(result) {
+        lista.push(result.get(0));
+    },
+    onCompleted: function() {
+      consultaMonumentos.close();
+      res.send(lista);
+    },
+    onError: function(error) {
+      console.log(error);
+    }
+  });
+});
+
+//FUNCION PARA OBTENER SITIOS CON CULTURAL: mayor valor de monumentos de la media, que sea turismo
+app.get("/busquedaCultural", function(req, res) {
+  //AQUI HACEMOS LA CONSULTA A LA BASE DE DATOS
+  query="MATCH (s:Sitios), (c:comunidad),(i:costaInterior), (r:ruralUrbano),"+
+      "(d:descansoTurismo) WHERE (s)-[:PERTENECE_A]->(c) ";
+  query+= "AND (s)-[:ES_COSTA_O_INTERIOR]->(i)"  
+  query+= "AND (s)-[:ES_RURAL_O_URBANO]->(r)"
+  query+= "AND (s)-[:ES_DESCANSO_O_TURISMO]->(d {nombre: 'Turismo'})"
+  query+= " AND s.monumentos>"+req.query.avgMonumento+""
+  query+=" RETURN s.nombre, s.provincia, i.nombre, r.nombre, d.nombre, s.monumentos, s.naturaleza, s.fiesta, s.comida, s.queVer ORDER BY s.monumentos DESC ";
+  var lista=[]
+  const consultaCultura = driver.session();
+  consultaCultura.run(query).subscribe({
+    onNext: function(result) {
+      lista.push(result.get(0));
+      lista.push(result.get(1));
+      lista.push(result.get(2));
+      lista.push(result.get(3));
+      lista.push(result.get(4));
+      lista.push(result.get(5).low);
+      lista.push(result.get(6).low);
+      lista.push(result.get(7).low);
+      lista.push(result.get(8).low);
+      lista.push(result.get(9));
+    },
+    onCompleted: function() {
+      consultaCultura.close();
+      res.send(lista);
+    },
+    onError: function(error) {
+      console.log(error);
+    }
+  });
+});
+
 /*
-//FUNCION PARA DEVOLVER LA MEDIA DE TRIPLES DE LOS JUGADORES
-app.get("/avg3p", function(req, res) {
-  //AQUI HACEMOS LA CONSULTA A LA BASE DE DATOS
-  query = "MATCH (p:Player) return avg(p.threep)"
-  var lista=[]
-  const consultaTriples = driver.session();
-  consultaTriples.run(query).subscribe({
-    onNext: function(result) {
-        lista.push(result.get(0));
-    },
-    onCompleted: function() {
-      consultaTriples.close();
-      res.send(lista);
-      
-    },
-    onError: function(error) {
-      console.log(error);
-    }
-  });
-});
-
-//FUNCION PARA DEVOLVER LA MEDIA DE ROBOS DE LOS JUGADORES
-app.get("/avgRobos", function(req, res) {
-  //AQUI HACEMOS LA CONSULTA A LA BASE DE DATOS
-  query = "MATCH (p:Player) where p.comunidad='SF' or p.comunidad='SG' or p.comunidad='PG' return avg(p.robos_pp)"
-  var lista=[]
-  const consultaRobos = driver.session();
-  consultaRobos.run(query).subscribe({
-    onNext: function(result) {
-        lista.push(result.get(0));
-    },
-    onCompleted: function() {
-      consultaRobos.close();
-      res.send(lista);
-      
-    },
-    onError: function(error) {
-      console.log(error);
-    }
-  });
-});
-
 //FUNCION PARA DEVOLVER LA MEDIA DE ROBOS DE LOS JUGADORES
 app.get("/avgRebotesDef", function(req, res) {
   //AQUI HACEMOS LA CONSULTA A LA BASE DE DATOS

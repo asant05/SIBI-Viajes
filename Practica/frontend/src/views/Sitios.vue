@@ -41,7 +41,7 @@
         <v-card-title class="teal" >
           <strong class="subheading">Si tiene alguna duda o consejo que darlos, no dude en escribirnos!</strong>
           <v-spacer></v-spacer>
-          <v-btn href="https://www.linkedin.com/in/omar-arias-fern%C3%A1ndez-7a71871b7/" target="_blank" :key="icon" class="mx-4" dark icon>
+          <v-btn href="mailto:asantf05@estudiantes.unileon.es?Subject=Dudas%20sobre%20ViajarEsVivir" target="_blank" :key="icon" class="mx-4" dark icon>
             <v-icon size="24px">mdi-message</v-icon>
           </v-btn>
         </v-card-title>
@@ -175,6 +175,7 @@ export default {
     costaInterior: '',
     ruralUrbano: '',
     descansoTurismo: '',
+    orden: '',
     rules: undefined,
     icon: undefined
   }),
@@ -182,7 +183,6 @@ export default {
       axios.get('http://localhost:3000/buscandoSitios',{
         params:{
           comunidad: this.$store.state.sitio.comunidad,
-          //provincia: this.$store.state.sitio.provincia,
           costaInterior: this.$store.state.sitio.costaInterior,
           ruralUrbano: this.$store.state.sitio.ruralUrbano,
           descansoTurismo: this.$store.state.sitio.descansoTurismo,
