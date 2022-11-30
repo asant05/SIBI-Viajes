@@ -36,46 +36,43 @@
       </div>
   
       <!-- Pie de pagina -->
-      <div id="piePagina" >
-        <v-footer dark padless >
-        <v-card class="flex"  flat tile >
-          <v-card-title class="teal" >
-            <strong class="subheading">Si tiene alguna duda o consejo que darlos, no dude en escribirnos!</strong>
-            <v-spacer></v-spacer>
-            <v-btn href="mailto:asantf05@estudiantes.unileon.es?Subject=Dudas%20sobre%20ViajarEsVivir" target="_blank" :key="icon" class="mx-4" dark icon>
-              <v-icon size="24px">mdi-message</v-icon>
-            </v-btn>
-          </v-card-title>
-  
-          <v-card-text class="py-2 white--text text-center">
-            {{ new Date().getFullYear() }} —
-            <strong
-              >Curso 22/23 Sistemas de información de gestión y business intelligence<br />
-              <v-bottom-sheet v-model="sheet" inset>
-                <template v-slot:activator="{ on, attrs }">
-                  <v-btn color="orange" dark v-bind="attrs" v-on="on"
-                    >AYUDA
-                  </v-btn>
-                </template>
-                <v-sheet class="text-center" height="270px">
-                  <v-btn class="mt-6" text color="error" @click="sheet = !sheet">
-                    Cerrar ventana
-                  </v-btn>
-                  <div class="text-left">
-                    Para el uso de esta aplicación, se deben introducir los parametros que el usuario 
-                    busque en su viaje para que así el programa contraste la base de datos y se ajuste
-                    a la busqueda. El requisito obligatorio es la comunidad, tanto para la búsqueda
-                    con los demás parámetros como la recomendación aleatoria.<br>
-                    En el primer apartado se deberán introducir todos los datos y el programa buscará
-                    el que sea mas afín, y en el segundo se elegirán destinos aleatorios.
-                  </div>
-                </v-sheet>
-              </v-bottom-sheet>
-            </strong>
-          </v-card-text>
-        </v-card>
-      </v-footer>
-      </div>
+    <div id="piePagina" >
+      <v-footer dark padless >
+      <v-card class="flex"  flat tile >
+        <v-card-text class="py-2 white--text text-center">
+          {{ new Date().getFullYear() }} -
+          <strong
+            >Curso 22/23 Sistemas de información de gestión y business intelligence<br />
+            <v-bottom-sheet v-model="sheet" inset>
+              <template v-slot:activator="{ on, attrs }">
+                <strong class="subheading">Si tiene alguna duda o consejo que darlos, no dude en escribirnos!</strong>
+          <v-spacer></v-spacer>
+          <v-btn href="mailto:asantf05@estudiantes.unileon.es?Subject=Dudas%20sobre%20ViajarEsVivir" target="_blank" :key="icon" class="mx-4" dark icon>
+            <v-icon size="24px">mdi-message</v-icon>
+          </v-btn>
+                <v-btn color="orange" dark v-bind="attrs" v-on="on"
+                  >AYUDA
+                </v-btn>
+              </template>
+              <v-sheet class="text-center" height="270px">
+                <v-btn class="mt-6" text color="error" @click="sheet = !sheet">
+                  Cerrar ventana
+                </v-btn>
+                <div class="text-left">
+                  Para el uso de esta aplicación, se deben introducir los parametros que el usuario 
+                  busque en su viaje para que así el programa contraste la base de datos y se ajuste
+                  a la busqueda. El requisito obligatorio es la comunidad, tanto para la búsqueda
+                  con los demás parámetros como la recomendación aleatoria.<br>
+                  En el primer apartado se deberán introducir todos los datos y el programa buscará
+                  el que sea mas afín, y en el segundo se elegirán destinos aleatorios.
+                </div>
+              </v-sheet>
+            </v-bottom-sheet>
+          </strong>
+        </v-card-text>
+      </v-card>
+    </v-footer>
+    </div>
     </v-app>
   </template>
   

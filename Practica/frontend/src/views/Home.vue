@@ -134,27 +134,41 @@
 
         <!-- Finaliza el div de las recomendaciones -->
       </div>   
-        <!-- Finaliza el div de los elementos de busqueda -->
+      <div id="recomendaciones2" style="float:left; margin-left:10px; margin-right: 50px; margin-top: 0px">
+        <br /><strong>Si no sabes a donde ir, podemos sugerirte lo mas cercano por tu rango de edad.</strong><br />
+
+        <!-- Botón para escoger estilo de busqueda -->
+        <v-row style="float:left; width:40%; padding-right:40px; margin-left:0px ">
+            <v-select v-model="rangoedad" :items="rangos" :menu-props="{ top: true, offsetY: true }" label="Escoge rango "></v-select>
+        </v-row>
+
+        <!-- Boton para comenzar la búsqueda -->
+        <v-row style="float:left">
+          <v-col cols="12">
+            <v-btn v-on:click= "buscarPorRango()" rounded color="primary" dark >BUSCAR POR RANGO</v-btn>
+          </v-col>
+        </v-row>
+
+      <!-- Finaliza el div de las recomendaciones -->
+      </div>   
+    <!-- Finaliza el div de los elementos de busqueda -->
     </div> 
 
     <!-- Pie de pagina -->
     <div id="piePagina" >
       <v-footer dark padless >
       <v-card class="flex"  flat tile >
-        <v-card-title class="teal" >
-          <strong class="subheading">Si tiene alguna duda o consejo que darlos, no dude en escribirnos!</strong>
-          <v-spacer></v-spacer>
-          <v-btn href="mailto:asantf05@estudiantes.unileon.es?Subject=Dudas%20sobre%20ViajarEsVivir" target="_blank" :key="icon" class="mx-4" dark icon>
-            <v-icon size="24px">mdi-message</v-icon>
-          </v-btn>
-        </v-card-title>
-
         <v-card-text class="py-2 white--text text-center">
           {{ new Date().getFullYear() }} -
           <strong
             >Curso 22/23 Sistemas de información de gestión y business intelligence<br />
             <v-bottom-sheet v-model="sheet" inset>
               <template v-slot:activator="{ on, attrs }">
+                <strong class="subheading">Si tiene alguna duda o consejo que darlos, no dude en escribirnos!</strong>
+          <v-spacer></v-spacer>
+          <v-btn href="mailto:asantf05@estudiantes.unileon.es?Subject=Dudas%20sobre%20ViajarEsVivir" target="_blank" :key="icon" class="mx-4" dark icon>
+            <v-icon size="24px">mdi-message</v-icon>
+          </v-btn>
                 <v-btn color="orange" dark v-bind="attrs" v-on="on"
                   >AYUDA
                 </v-btn>
@@ -201,6 +215,7 @@ export default {
     rurUrb: ["Rural", "Urbano"],
     desTur: ["Descanso", "Turismo"],
     estilos: ["Festividad", "Desconexion", "Playa", "Cultural"],
+    rangos: ["Entre 16 y 24 años", "Entre 24 y 32 años", "Entre 32 y 40 años", "Entre 40 y 55 años", "Mas de 55 años"],
     ordenAtributos: ["Nombre Sitio", "Provincia", "Costa o Interior", "Rural o Urbano", "Descanso o Turismo", "Monumentos", "Naturaleza", "Fiesta", "Comida"],
     sheet: false,
     //Objeto sitio para almacenar los datos y pasárselos a la base de datos como parámetro
@@ -223,6 +238,7 @@ export default {
     comunidadRec:'',
     orden:'',
     estiloViaje: '',
+    rangoedad: '',
     rules: undefined,
     icon: undefined
   }),
@@ -291,6 +307,25 @@ export default {
 
           //Redireccionamos a sitios, allí se hará la consulta
             this.$router.push('/SitiosEstilos');
+        }
+    },
+    buscarPorRango(){
+      //Comprobamos que haya introducido algun valor en todos los parámetros de búsqueda necesarios
+        if(this.rangoedad == ''){
+          //Mensaje de error
+          Swal.fire({
+            title: '¡BÚSQUEDA INCOMPLETA!',
+            text: 'Debes introducir el rango de viaje',
+            icon: 'error',
+            confirmButtonText: 'Aceptar'
+          })
+        }else{
+          //Guardamos en la variable global sitio los valores que nos han introducido por pantalla
+            this.$store.state.rangoedad=this.rangoedad,
+            console.log("El rango es  "+this.$store.state.rangoedad);
+
+          //Redireccionamos a sitios, allí se hará la consulta
+            this.$router.push('/SitiosRango');
         }
     },
   }

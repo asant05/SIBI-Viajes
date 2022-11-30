@@ -5,6 +5,8 @@ import Sitios from '../views/Sitios.vue'
 import SitiosRec from '../views/SitiosRec.vue'
 import SitiosEstilos from '../views/SitiosEstilos.vue'
 import PagInicial from '../views/PagInicial.vue'
+import SitiosRango from '../views/SitiosRango.vue'
+
 
 
 Vue.use(VueRouter)
@@ -34,6 +36,11 @@ const routes = [
     path: '/',
     name: 'PagInicial',
     component: PagInicial
+  },
+  {
+    path: '/SItiosRango',
+    name: 'SitiosRango',
+    component: SitiosRango
   }
 ]
 

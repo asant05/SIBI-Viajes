@@ -38,20 +38,17 @@
     <div id="piePagina" >
       <v-footer dark padless >
       <v-card class="flex"  flat tile >
-        <v-card-title class="teal" >
-          <strong class="subheading">Si tiene alguna duda o consejo que darlos, no dude en escribirnos!</strong>
-          <v-spacer></v-spacer>
-          <v-btn href="mailto:asantf05@estudiantes.unileon.es?Subject=Dudas%20sobre%20ViajarEsVivir" target="_blank" :key="icon" class="mx-4" dark icon>
-            <v-icon size="24px">mdi-message</v-icon>
-          </v-btn>
-        </v-card-title>
-
         <v-card-text class="py-2 white--text text-center">
-          {{ new Date().getFullYear() }} —
+          {{ new Date().getFullYear() }} -
           <strong
             >Curso 22/23 Sistemas de información de gestión y business intelligence<br />
             <v-bottom-sheet v-model="sheet" inset>
               <template v-slot:activator="{ on, attrs }">
+                <strong class="subheading">Si tiene alguna duda o consejo que darlos, no dude en escribirnos!</strong>
+          <v-spacer></v-spacer>
+          <v-btn href="mailto:asantf05@estudiantes.unileon.es?Subject=Dudas%20sobre%20ViajarEsVivir" target="_blank" :key="icon" class="mx-4" dark icon>
+            <v-icon size="24px">mdi-message</v-icon>
+          </v-btn>
                 <v-btn color="orange" dark v-bind="attrs" v-on="on"
                   >AYUDA
                 </v-btn>
