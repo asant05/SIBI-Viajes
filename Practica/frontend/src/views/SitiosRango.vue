@@ -21,7 +21,6 @@
           <br />
           Bienvenido a Viajar es vivir, aqui podemos ver las opciones que se adaptan mas a tu prototipo de usuario:
           <br />
-          <strong>{{this.$store.state.comunidadRec}}</strong>
           <br />
           <br />
         </div>
