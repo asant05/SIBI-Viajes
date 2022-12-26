@@ -1,0 +1,32 @@
+LOAD CSV WITH HEADERS FROM 'file:///BaseDeDatosViajes.csv' AS line WITH line LIMIT 200
+	WITH line WHERE line.Nombre IS NOT NULL AND line.ModeloE IS NOT NULL
+MERGE (s:Sitios { nombre:line.Nombre, comunidad:(line.ComunidadAutonoma), 
+	provincia: (line.Provincia), monumentos:toInteger(line.Monumentos), 
+	naturaleza:toInteger(line.Naturaleza), fiesta:toInteger(line.Fiesta), 
+	comida:toInteger(line.Comida), queVer:line.QueVer, modeloA:(line.ModeloA),
+	modeloB:(line.ModeloB), modeloC:(line.ModeloC),
+	modeloD:(line.ModeloD), modeloE:(line.ModeloE)})
+FOREACH (n IN (CASE WHEN line.ComunidadAutonoma IS NULL THEN [] ELSE [1] END) 
+	| MERGE (c:comunidad {nombre:line.ComunidadAutonoma})
+	MERGE (s)-[:PERTENECE_A]->(c)
+	FOREACH (m IN (CASE WHEN line.RuralUrbano IS NULL THEN [] ELSE [1] END)
+		| MERGE (r:ruralUrbano {nombre:line.RuralUrbano})
+		MERGE (s)-[:ES_RURAL_O_URBANO]->(r)
+	)
+	FOREACH (m IN (CASE WHEN line.CostaInterior IS NULL THEN [] ELSE [1] END)
+		| MERGE (i:costaInterior {nombre:line.CostaInterior})
+		MERGE (s)-[:ES_COSTA_O_INTERIOR]->(i)
+	)
+	FOREACH (m IN (CASE WHEN line.DescansoTurismo IS NULL THEN [] ELSE [1] END)
+		| MERGE (d:descansoTurismo {nombre:line.DescansoTurismo})
+		MERGE (s)-[:ES_DESCANSO_O_TURISMO]->(d)
+	)
+)
+
+Para visualizar 
+MATCH(n) RETURN n:
+
+Para borrar
+MATCH (n) DETACH DELETE n
+
+Carpeta: SIBI-Viajes--> contrasenia: viajes --> basededatos: neo4j

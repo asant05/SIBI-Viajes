@@ -1,0 +1,189 @@
+﻿Nombre,ComunidadAutonoma,Provincia,RuralUrbano,CostaInterior,Monumentos,Naturaleza,Fiesta,Comida,DescansoTurismo,QueVer,ModeloA,ModeloB,ModeloC,ModeloD,ModeloE
+A Coruna,Galicia,Coruna,Urbano,Costa,8,3,7,7,Turismo,Paseo Maritimo. Plaza Santa Barbara. Torre de Hercules.,6,1,4,10,8
+Muros,Galicia,Coruna,Rural,Costa,4,7,3,7,Descanso,Casco Antiguo. Iglesia Parroquial. El Muino de Mare do Pozo de Cachon.,4,2,10,10,6
+Betanzoz,Galicia,Coruna,Rural,Interior,6,8,2,6,Descanso,Iglesia de Santiago. Iglesia de San Francisco. Iglesia de Sana Maria de Azoague,7,8,2,9,1
+Noia,Galicia,Coruna,Rural,Costa,8,6,3,6,Descanso,Ponte de Traba. Iglesia de Santa Maria a Nova. Casco Antiguo.,2,8,10,6,1
+Pontevedra,Galicia,Pontevedra,Urbano,Interior,7,2,4,5,Turismo,Iglesia de la Virgen Peregrina. Real Basilica de Santa maria la Mayor. Pazo de Laurizan.,6,7,7,2,1
+Vigo,Galicia,Pontevedra,Urbano,Costa,8,3,7,8,Turismo,Islas Cies. Parques Forestales.  Barrio de Bouzas.,10,7,4,6,9
+Cambados,Galicia,Pontevedra,Rural,Costa,6,4,6,7,Turismo,Ruinas de Santa Marina. Plaza de Fefinanes. Iglesia de San Benito.,1,0,7,1,7
+Combarro,Galicia,Pontevedra,Rural,Costa,8,4,3,6,Descanso,Horreos. Monasterios de San Xoan de Poio. Puerto de Combarro.,6,2,2,1,9
+Lugo,Galicia,Lugo,Urbano,Interior,7,2,6,8,Turismo,Muralla Romana. Catedral de Lugo. Parque de Mino.,8,1,7,1,2
+Mondonedo,Galicia,Lugo,Rural,Interior,6,6,3,8,Descanso,Catedral de Mondonedo. Iglesia de Santiago. Restos arqueologicos.,10,7,10,2,9
+Ribadeo,Galicia,Lugo,Rural,Costa,4,7,5,7,Descanso,Playa de las Catedrales. Casco historico. Palacio de Ibanez.,8,4,7,3,6
+Portomarin,Galicia,Lugo,Rural,Interior,5,6,3,8,Descanso,Paseo de  Portomarin. Pazos de Conde da Maza. Iglesia Fortaleza de San Nicolas.,7,10,8,0,7
+Ourense,Galicia,Ourense,Urbano,Interior,7,3,7,8,Turismo,Aguas Termales. Catedral de San Martin de Orense. Puente Romano.,5,4,1,8,3
+Vilanova dos Infantes,Galicia,Ourense,Rural,Interior,3,8,2,6,Descanso,Torre Fortificada. Iglesia de San Salvador. Santuario de la Virgen del Cristal,6,10,9,1,5
+Ribadavia,Galicia,Ourense,Rural,Interior,5,5,4,7,Descanso,Vinedos de Vino Ribeiro. Parque Nautico de Castrelo de Mino. Barrio Judio.,5,10,7,4,4
+Pazos de Arenteiro,Galicia,Ourense,Rural,Interior,2,6,1,6,Descanso,Pazos y casas solariegas. Iglesia de San Salvador.,1,9,9,6,3
+Oviedo,Asturias,Asturias,Urbano,Interior,3,3,9,8,Turismo,Iglesia de Santa Maria del Naranco. Monte Naranco. Catedral Metropolitana de El Salvador de Oviedo.,10,0,6,0,10
+Gijon,Asturias,Asturias,Urbano,Costa,5,6,9,8,Turismo,Jardin Botanico Atlantico. Playa San Lorenzo. Cimadevilla.,8,1,7,7,9
+Cudillero,Asturias,Asturias,Rural,Costa,4,7,4,8,Descanso,Plaza de la Marina. El mirador de la Garita. Callejeo por Cudillero.,8,7,4,7,6
+Lastres,Asturias,Asturias,Rural,Costa,5,6,4,7,Descanso,Puerto de Lastres. Playa de El Escanu. Capilla del Buen Suceso.,10,5,5,8,5
+Santander,Cantabria,Cantabria,Urbano,Costa,5,4,7,6,Turismo,Palacio de la Magdalena. Museo Maritimo del Cantabrico. Catedral.,6,4,10,10,7
+Santillana del Mar,Cantabria,Cantabria,Rural,Interior,4,7,4,8,Descanso,Cuevas de Altamira. Colegiata de Santa Juliana. Museo de la Tortura.,9,4,7,0,7
+Comillas ,Cantabria,Cantabria,Rural,Costa,7,6,8,9,Turismo,El Capricho de Gaudi. Palacio de Sobrellano. Universidad Pontifica.,8,1,6,3,4
+Potes,Cantabria,Cantabria,Rural,Interior,6,8,5,9,Descanso,Monasterio de Santo Toribio. Torre del Infantado. Ermita Virgen de Valmayor.,4,10,10,0,3
+Bilbao,Pais Vasco,Vizcaya,Urbano,Costa,8,3,9,8,Turismo,Mercado de la Ribera. Museo Guggenheim. Catedral de Santiago.,0,5,9,3,8
+Gernika,Pais Vasco,Vizcaya,Rural,Interior,5,6,4,6,Descanso,arbol de Gernika. Iglesia de Santa Maria. La Casa de Juntas de Gernika.,1,0,4,7,2
+Mundaka,Pais Vasco,Vizcaya,Rural,Costa,3,9,5,8,Descanso,Playa de Laidatxu. Iglesia de Santa Maria. Ermita de Santa Catalina,3,0,8,8,7
+Bermeo,Pais Vasco,Vizcaya,Rural,Costa,6,8,5,9,Descanso,Torre Ercilla. El Casino. La casa Kikumbera.,8,4,7,7,10
+San Sebastian,Pais Vasco,Guipuzcoa,Urbano,Costa,6,7,7,8,Turismo,Playa de la Concha. San Telmo Museoa. Monte Urgull.,0,5,8,9,10
+Pasai Donibane,Pais Vasco,Guipuzcoa,Rural,Costa,4,8,5,7,Descanso,Fachadas de colores. Calle Principal. Plaza de Santiago.,7,8,9,6,2
+Hondarriba,Pais Vasco,Guipuzcoa,Rural,Costa,6,8,7,8,Descanso,Playa de Hondarribia. Espigon de Hondarribia. Barrio de la Marina,1,1,3,3,2
+Zarautz,Pais Vasco,Guipuzcoa,Rural,Costa,9,5,7,8,Turismo,Palacio de Narros. Playa de Zarautz. Torre-Luzea.,2,0,2,4,2
+Laguardia,Pais Vasco,Alava,Rural,Interior,4,6,5,7,Descanso,Iglesia de Santa Maria. El Ayuntamiento. El Convento de los Capuchinos.,3,0,4,10,5
+Amurrio,Pais Vasco,Alava,Rural,Interior,6,7,4,6,Descanso,Iglesia de Santa Maria. Iglesia de la Asuncion. Casa Torre Ugarte.,4,10,0,9,6
+Urturi,Pais Vasco,Alava,Rural,Interior,4,8,3,7,Descanso,Ermita de San Juan. Parque Natural de Izki. Plaza Mayor.,5,3,1,3,10
+Araya,Pais Vasco,Alava,Rural,Interior,6,5,3,7,Descanso,Iglesia de San Pedro. Ermita Romantica de San Juan. Antigua Ferreria de la familia Ajuria.,9,4,3,0,2
+Olite,Navarra,Navarra,Rural,Interior,7,7,4,6,Descanso,Descanso,Palacio Real de Olite. Iglesia Santa Maria La Real. Bodegas.,10,10,7,1,5
+Ochogavia,Navarra,Navarra,Rural,Interior,7,6,4,7,Descanso,Palacio de Urrutia. Palacio de Iriarte. Palacio de Donamaria.,3,4,8,0,5
+Isaba,Navarra,Navarra,Rural,Interior,7,7,5,7,Descanso,Casa de la Memoria. Ermita de Idoia. Iglesia de San Cipriano.,6,8,3,2,1
+Etxalar,Navarra,Navarra,Rural,Interior,7,8,4,8,Descanso,Molino de Agua. Casas tradicionales. Iglesias.,9,8,1,9,9
+Ainsa,Aragon,Huesca,Rural,Interior,8,7,3,5,Descanso,Calles Principales. Plaza Mayor. Casa Arnal.,9,7,10,10,5
+Alquezar,Aragon,Huesca,Rural,Interior,8,7,5,6,Descanso,Casco Historico. Ermita de Nuestra Senora de las Nieves. Plaza Mayor.,10,5,3,10,4
+Jaca,Aragon,Huesca,Rural,Interior,7,6,3,6,Descanso,Fortaleza Mayor. Catedral Romanica. Puente de San Miguel.,9,8,10,2,1
+Torla,Aragon,Huesca,Rural,Interior,6,7,4,6,Descanso,Iglesia de San Salvador. Plaza Mayor. Casona del Alto Aragon.,6,4,6,8,2
+Zaragoza,Aragon,Zaragoza,Urbano,Interior,7,6,7,5,Turismo,Basilica de Nuestra Senora del Pilar. Palacio de la Aljaferia. Catedral del Salvador.,0,10,9,6,9
+Sos del Rey Catolico,Aragon,Zaragoza,Rural,Interior,4,5,3,5,Descanso,Castillo de la Pena Felizana. Palacio de los Sada. Iglesia de San Esteban.,1,4,2,5,4
+Uncastillo,Aragon,Zaragoza,Rural,Interior,4,7,5,7,Descanso,Barranco de la Petilla. Barranco de las Anas. Castillo de la Pena de Ayllon.,5,3,6,7,6
+Anento,Aragon,Zaragoza,Rural,Interior,4,8,4,6,Descanso,Iglesia parroquial. Torreon de San Cristobal. Valle de Aguallueve.,3,10,2,7,4
+Teruel,Aragon,Teruel,Urbano,Interior,9,2,4,6,Turismo,Dinopolis. Catedral de Santa Maria de Mediavilla. Plaza el Torico.,2,0,1,7,0
+Albarracin,Aragon,Teruel,Rural,Interior,7,6,7,6,Descanso,Casco Antiguo. Alcazar. Catedral del Salvador.,1,1,10,6,9
+Valderrobles,Aragon,Teruel,Rural,Interior,7,6,5,7,Descanso,Castillo Palacio de Valderrobles. Casa de los Moles. Iglesia de Santa Maria la Mayor.,3,0,9,7,2
+Calaceite,Aragon,Teruel,Rural,Interior,6,9,4,6,Descanso,Castillo Palacio de Valderrobles. Casa de los Moles. Iglesia de Santa Maria la Mayor.,8,8,5,2,6
+Lerida,Cataluna,Lerida,Urbano,Interior,8,4,5,7,Turismo,Castell de la Suda. Carrer Major de Lleida. Catedral Nueva de Lleida.,0,7,10,9,8
+Taul ,Cataluna,Lerida,Rural,Interior,7,5,3,7,Descanso,Iglesia de Sant Clement. Valle de Boi. Iglesia de Santa Maria.,5,1,2,7,10
+Guimera,Cataluna,Lerida,Rural,Interior,6,7,3,6,Descanso,Nucleo Medieval. Ruinas de su castillo. Iglesia gotica de Santa Maria.,10,0,3,4,0
+Durro,Cataluna,Lerida,Rural,Interior,6,8,4,6,Descanso,Iglesia parroquial de la Nativitat. Centro historico. Calle Mayor.,7,0,3,4,0
+Gerona,Cataluna,Gerona,Urbano,Interior,9,2,8,4,Turismo,Casas del Onyar. La Catedral. El Call.,7,5,7,6,10
+Cadaques,Cataluna,Gerona,Rural,Costa,8,7,5,7,Descanso,Casa Blancas. Paseo Maritimo. Barrio Judio.,9,2,2,3,5
+Calella de Palafrugel,Cataluna,Gerona,Rural,Costa,9,7,5,5,Descanso,Casa Blancas. Camino de la Ronda. Barrio Maritimo.,3,1,9,8,9
+Castellfoit de la Roca,Cataluna,Gerona,Rural,Interior,8,8,2,8,Descanso,Rio Fluvià. Barrio Viejo. Antigua Iglesia de Sant Salvador.,7,1,7,8,8
+Barcelona,Cataluna,Barcelona,Urbano,Interior,9,1,8,3,Turismo,Basilica de la Sagrada Familia. Park Guell. Casa Batlo.,10,5,0,0,3
+Rupit I Pruit,Cataluna,Barcelona,Rural,Interior,5,8,4,8,Descanso,Calles Principales. Plaza Mayor. Castillo.,9,2,7,7,1
+Baga,Cataluna,Barcelona,Rural,Interior,5,9,5,7,Descanso,Parque Natural. Iglesia de Sant Esteve. Palacio de los Barones.,0,5,9,3,6
+Talamanca,Cataluna,Barcelona,Rural,Interior,6,9,4,6,Descanso,Castillo. Plaza de la Cruz. Lagares de Las Siete Tinas.,7,7,8,3,2
+Tarragona,Cataluna,Tarragona,Urbano,Costa,9,7,4,6,Turismo,Circo Romano. Anfiteatro.Playa Gorda.,9,2,1,5,7
+Margalef,Cataluna,Tarragona,Rural,Interior,6,8,3,7,Descanso,Ermita de Sant Salvador. Calles Entrerocas. Murallas.,7,8,10,8,2
+Montblanc,Cataluna,Tarragona,Rural,Interior,8,7,5,7,Descanso,Iglesia de Santa Maria. Ruta del Gotico Cisterciense. Iglesia de Sant Francesc.,6,0,6,1,1
+Prades,Cataluna,Tarragona,Rural,Costa,7,8,6,7,Descanso,Ermita de l'Abellera. Iglesia de Santa Maria. Mercado medieval.,3,0,6,3,1
+Logrono,La Rioja,Logrono,Urbano,Interior,8,7,8,7,Turismo,Concatedral de Santa Maria. San Bartolome. Puente de Piedra.,8,6,2,3,9
+Ezcaray,La Rioja,Logrono,Rural,Interior,7,6,5,8,Descanso,Plaza Mayor. Casas de los balcones. Estacion de esqui.,3,5,3,1,3
+Sajazarra,La Rioja,Logrono,Rural,Interior,6,8,6,7,Descanso,Casco urbano. Casas senoriales. Castillo.,5,3,3,10,4
+San Millan de la Cogolla,La Rioja,Logrono,Rural,Interior,8,7,4,8,Descanso,Monasterio de Yuso. Monasterio de Suso. Plaza mayor.,3,10,8,7,2
+Leon,Castilla y Leon,Leon,Urbano,Interior,9,6,8,10,Turismo,Catedral de Leon. Casa Botines. Basilica San Isidoro.,3,2,2,0,5
+Penalba de Santiago,Castilla y Leon,Leon,Rural,Interior,7,10,2,9,Descanso,Iglesia Mozarabe. Plaza Mayor. Calles principales.,5,1,4,1,8
+Astorga,Castilla y Leon,Leon,Urbano,Interior,9,5,8,9,Descanso,Catedral de Santa Maria. Palacio Episcopal. Satuario de Fatima.,3,0,10,8,4
+Castrillo de los Polvazares,Castilla y Leon,Leon,Rural,Interior,8,6,3,10,Descanso,Iglesia de San Juan Bautista. Puentes. Centro historico.,7,8,8,9,3
+Zamora,Castilla y Leon,Zamora,Urbano,Interior,9,7,8,6,Descanso,Castillo de Zamora. Santa Iglesia Catedral del Salvador.Iglesia de Santa Maria Magdalena.,4,7,8,3,4
+Toro,Castilla y Leon,Zamora,Rural,Interior,8,6,7,8,Descanso,Colegiata de Santa Maria La Mayor. Alcazar Real. Palacio de los Condes.,2,6,0,9,0
+Puebla de Sanabria.,Castilla y Leon,Zamora,Rural,Interior,9,8,5,8,Descanso,Castillo de los Condes de Benavente. Palacio Consistorial. Iglesia de Santa Maria de Azoague.,0,2,0,10,2
+Alcanices,Castilla y Leon,Zamora,Rural,Interior,8,8,7,8,Descanso,Torre del Reloj. Iglesia romanica. Monasterio del Marques de Alcanices,7,3,4,1,8
+Salamanca,Castilla y Leon,Salamanca,Urbano,Interior,8,7,8,7,Turismo,Catedral de Salamanca. Casa de las Conchas. Catedral Vieja de Santa Maria.,7,7,10,7,4
+Alba de Tormes,Castilla y Leon,Salamanca,Rural,Interior,8,6,5,8,Descanso,Puente medieval. Basilica de Santa Teresa. Iglesia de San Pedro.,0,5,9,2,3
+Bejar,Castilla y Leon,Salamanca,Rural,Interior,7,8,4,7,Descanso,Teatro de Cervantes. Iglesia de San Gil. Calle y Plaza Mayor.,8,6,3,0,1
+Ciudad Rodrigo,Castilla y Leon,Salamanca,Rural,Interior,9,6,7,8,Descanso,Muralla. Castillo. El verraco.,1,6,4,8,4
+Palencia,Castilla y Leon,Palencia,Urbano,Interior,9,6,4,8,Descanso,Cristo del Otero. Museo de Palencia. Iglesia de San  Miguel.,5,7,5,4,2
+Ampudia,Castilla y Leon,Palencia,Rural,Interior,9,6,7,5,Turismo,Castillo. Monasterio de Nuestra Senora de Alconada. Colegiata de San Miguel.,4,6,9,8,4
+Carrion de los Condes,Castilla y Leon,Palencia,Rural,Interior,8,6,7,8,Turismo,Monasterio de Santa Clara. Monasterio de San Zoilo. Iglesia de San Andres Apostol.,9,10,2,6,4
+Aguilar de Campoo,Castilla y Leon,Palencia,Rural,Interior,8,6,5,8,Descanso,Castillo. Monasterios de Santa Maria La Real. Colegiata de San Miguel.,5,8,6,3,7
+Valladolid,Castilla y Leon,Valladolid,Urbano,Interior,8,2,9,6,Descanso,Plaza Mayor. Rio Pisuerga. Catedral.,9,6,0,9,3
+Penafiel,Castilla y Leon,Valladolid,Rural,Interior,10,7,9,6,Descanso,Castillo. Plaza del Costo. Convento de Santa Clara.,1,3,0,4,4
+Uruena,Castilla y Leon,Valladolid,Rural,Interior,7,8,6,8,Descanso,Muralla. Iglesia de Santa Maria del Azogue. Ermita de Nuestra Senora de la Anunciada.,0,9,9,4,6
+Tiedra,Castilla y Leon,Valladolid,Rural,Interior,6,7,5,8,Descanso,Castillo. Plaza Mayor. Iglesia de San Miguel.,2,8,7,8,0
+Avila,Castilla y Leon,Avila,Urbano,Interior,9,7,8,6,Turismo,Murallas. Catedral. Basilica de San Vicente.,10,7,1,0,8
+Arevalo,Castilla y Leon,Avila,Rural,Interior,7,9,5,9,Descanso,Calle y Plaza principal. Iglesia de Santa Maria La Mayor. Iglesia de San Nicolas de Bari.,8,3,10,9,4
+Candeleda,Castilla y Leon,Avila,Rural,Interior,8,7,5,9,Descanso,Iglesia de Nuestra Senora de la Asuncion. Casa de las Flores. Casa Consistorial.,3,5,6,9,9
+Guisando,Castilla y Leon,Avila,Rural,Interior,9,7,4,7,Descanso,Plazas del pueblo. Casita Blanca. Casa de Jose Mateos.,5,7,7,2,10
+Burgos,Castilla y Leon,Burgos,Urbano,Interior,8,6,8,5,Descanso,Catedral. Monasterio de las Huelgas. Cartuja de Miraflores.,6,8,0,10,5
+Frias,Castilla y Leon,Burgos,Rural,Interior,9,7,2,8,Descanso,Casas Colgadas. Castillo y muralla. Convento de San Francisco.,5,3,3,0,7
+Covarrubias,Castilla y Leon,Burgos,Rural,Interior,8,5,8,6,Descanso,Iglesia de Santo Tomas. Torreon de Fernan Gonzalez. Colegiata de San Cosme.,4,10,8,7,7
+Orbaneja del Castillo,Castilla y Leon,Burgos,Rural,Interior,5,10,1,7,Descanso,Cueva del Azar. Beso de los Camellos. Cascada.,6,8,6,8,9
+Soria,Castilla y Leon,Soria,Urbano,Interior,8,7,6,9,Turismo,Ermita de San Saturio. Monasterio de San Juan de Duero. Iglesia de Santo Domingo.,6,0,2,0,3
+Vinuesa,Castilla y Leon,Soria,Rural,Interior,7,9,5,9,Descanso,Iglesia de la Virgen del Pino. Placituela. Calle Cuatro Calles y su Portalejo.,0,2,7,10,2
+Calatanazor,Castilla y Leon,Soria,Rural,Interior,5,9,2,7,Descanso,Calle Real. Iglesia de Santa Maria del Castillo. Castillo.,0,6,5,2,10
+El Burgo de Osma,Castilla y Leon,Soria,Rural,Interior,5,8,5,8,Descanso,Centro Historico. Catedral Gotica de la Asuncion. Plaza Mayor.,2,5,4,3,2
+Segovia,Castilla y Leon,Segovia,Urbano,Interior,9,6,7,5,Turismo,Alcazar. Acueducto. Catedral.,7,6,5,1,5
+Pedraza,Castilla y Leon,Segovia,Rural,Interior,7,8,5,9,Descanso,Plaza Mayor. Castillo. Iglesia de San Juan.,2,2,3,5,7
+Sepulveda,Castilla y Leon,Segovia,Rural,Interior,7,10,3,8,Descanso,Iglesia de El Salvador. Iglesia de Nuestra Senora. Reloj de la plaza.,4,0,8,10,10
+Santa Maria La Real de Nieva,Castilla y Leon,Segovia,Rural,Interior,7,8,5,8,Descanso,Plaza Mayor. Monasterio de Santa Maria. Iglesia de Nuestra Senora de la Virgen de Soterrana.,3,3,4,1,0
+Madrid,Madrid,Madrid,Urbano,Interior,10,2,9,7,Turismo,Parque de El Retiro. Plaza Mayor. Gran Via.,2,5,7,6,10
+Nuevo Baztan,Madrid,Madrid,Rural,Interior,7,8,4,8,Descanso,Palacio de Goyeneche. Iglesia de San Francisco Javier. Casco Historico.,4,10,9,3,8
+Patones de Arriba,Madrid,Madrid,Rural,Interior,8,6,5,7,Descanso,Centro Historico. Calles principales. Iglesia.,10,6,5,9,1
+Chinchon,Madrid,Madrid,Rural,Interior,8,9,4,6,Descanso,Plaza Mayor. Iglesia de la Asuncion. Torre del Reloj.,1,5,1,2,5
+Castellon,Comunidad Valenciana,Castellon,Urbano,Costa,9,6,8,5,Turismo,Playa de Gurugu. Plaza del Mar. Paseo Maritimo.,0,0,1,1,8
+Peniscola,Comunidad Valenciana,Castellon,Rural,Costa,6,8,4,8,Turismo,Casa de les Petxines. Castillo del Papa Luna. Ermitorio de la Virgen de la Ermitana.,1,7,7,9,3
+Morella,Comunidad Valenciana,Castellon,Rural,Interior,8,6,8,5,Descanso,Castillo Medieval.  Plaza de Armas. Centro Historico.,8,0,7,4,0
+Fanzara,Comunidad Valenciana,Castellon,Rural,Interior,9,6,8,4,Descanso,Grafittis. Plaza Mayor. Casco Historico.,7,8,4,8,0
+Valencia,Comunidad Valenciana,Valencia,Urbano,Costa,8,5,8,5,Turismo,Lonja de la Seda. Catedral. Oceanografic.,2,4,8,6,10
+Bocairent,Comunidad Valenciana,Valencia,Rural,Interior,4,10,7,5,Descanso,Parque Natural. Casco Antiguo. Covetes dels Moro.,2,4,3,5,0
+Carricola,Comunidad Valenciana,Valencia,Rural,Interior,4,10,3,8,Descanso,Entorno Natural. Castillo. Barranco del Castillo.,1,0,2,3,7
+Chulilla,Comunidad Valenciana,Valencia,Rural,Interior,6,9,7,9,Descanso,Charco Azul. Ruta de los puentes Colgantes. Castillo Mudejar.,2,2,0,0,5
+Alicante,Comunidad Valenciana,Alicante,Urbano,Costa,9,5,8,6,Descanso,Castillo de Santa Barbara. Explanada de Espana. Isla de Tabarca.,1,2,1,8,3
+Altea,Comunidad Valenciana,Alicante,Rural,Costa,8,5,8,7,Descanso,Paseo Maritimo. Plaza de Iglesia de Nuestra Senora. Miradores.,4,7,2,7,8
+Nueva Tabarca,Comunidad Valenciana,Alicante,Rural,Costa,8,9,8,6,Descanso,Playas. Plaza Mayor. Calles Principales.,10,1,2,0,5
+Guadalest,Comunidad Valenciana,Alicante,Rural,Interior,6,10,7,6,Descanso,Castillo de San Jose. Recorrido de Aguas Turquesas. Torre de la Alcozaiba.,8,9,9,5,6
+Albacete,Castilla La Mancha,Albacete,Urbano,Interior,7,8,5,8,Descanso,Museo de la Cuchilleria. Pasaje de Lodares. Parque Abelardo Sanchez.,7,0,1,5,7
+Alcala del Jucar,Castilla La Mancha,Albacete,Rural,Interior,8,8,6,8,Descanso,Casitas Blancas. Castillo. Puente Romano.,6,4,5,7,2
+Alcaraz,Castilla La Mancha,Albacete,Rural,Interior,7,5,8,4,Descanso,Plaza Mayor. Iglesia de la Santisima Trinidad. Iglesia de Santa Maria.,7,10,6,4,4
+Yeste,Castilla La Mancha,Albacete,Rural,Interior,8,6,8,4,Descanso,Castillo. Convento de San Francisco. Iglesia de la Asuncion.,9,4,10,0,10
+Ciudad Real,Castilla La Mancha,Ciudad Real,Urbano,Interior,9,6,7,3,Turismo,Playa Park. Parque Gasset. Diocesis de Ciudad Real.,0,7,1,8,10
+Almagro,Castilla La Mancha,Ciudad Real,Rural,Interior,6,8,4,8,Descanso,Plaza Mayor. Corral de Comedias. Casco Antiguo.,7,0,7,3,4
+Villanueva de los Infantes,Castilla La Mancha,Ciudad Real,Rural,Interior,5,8,5,8,Descanso,Paseo de las esculturas. Plaza Mayor. Iglesia Parroquial de San Andres.,5,7,6,9,6
+Campo de Criptana,Castilla La Mancha,Ciudad Real,Rural,Interior,7,5,8,6,Descanso,Molinos de campo de Criptana. Barrio de Albaicin. El Posito Real.,3,9,8,7,7
+Cuenca,Castilla La Mancha,Cuenca,Urbano,Interior,9,6,7,5,Turismo,Casas Colgantes. Catedral de Santa Maria. Ciudad Encantada.,7,4,3,7,7
+Alarcon,Castilla La Mancha,Cuenca,Rural,Interior,6,8,5,7,Descanso,Castillo. Iglesia de San Juan Bautista. Gargantas del rio Jucar.,10,3,0,8,10
+San Clemente,Castilla La Mancha,Cuenca,Rural,Interior,7,5,9,5,Descanso,Palacios. Torre Vieja. Arco Romano.,1,7,6,4,6
+Mota del Cuervo,Castilla La Mancha,Cuenca,Rural,Interior,7,5,8,4,Descanso,Molinos de Viento. Plaza Mayor. Casco Antiguo.,3,7,0,9,0
+Guadalajara,Castilla La Mancha,Guadalajara,Urbano,Interior,9,6,8,7,Turismo,Palacio del Infantado. Zoo. Panteon de la Duquesa.,7,10,4,5,6
+Siguenza,Castilla La Mancha,Guadalajara,Rural,Interior,7,5,8,5,Descanso,Catedral de Santa Maria. Monasterio de Nuestra Senora. Castillo.,5,7,7,8,5
+Molina de Aragon,Castilla La Mancha,Guadalajara,Rural,Interior,6,8,5,7,Descanso,Castillo y su fortaleza. Monasterio de San Francisco. Iglesia de Santa Clara.,2,4,9,5,5
+Torija,Castilla La Mancha,Guadalajara,Rural,Interior,7,5,8,7,Descanso,Castillo. Iglesia de la Asuncion. Museo de Viaje a La Alcarria.,9,6,10,3,9
+Toledo,Castilla La Mancha,Toledo,Urbano,Interior,10,7,6,9,Turismo,Santa Iglesia Catedral. Alcazar de Toledo. Monasterio de San Juan de los Reyes.,6,9,8,5,6
+Consuegra,Castilla La Mancha,Toledo,Rural,Interior,8,6,8,5,Descanso,Castillo de la Muela. Molinos de Viento. Iglesia de San Juan Bautista.,2,2,0,3,5
+Tembleque,Castilla La Mancha,Toledo,Rural,Interior,7,5,9,7,Descanso,Plaza Mayor.  Iglesia de Nuestra Senora de la Asuncion. Ermita de la Veracruz.,5,2,10,8,10
+Oropesa,Castilla La Mancha,Toledo,Rural,Interior,10,8,6,9,Descanso,Castillo de Oropesa. Iglesia de Nuestra Senora de la Asuncion. Ermita de las Penitas.,0,1,10,7,2
+Caceres,Extremadura,Caceres,Urbano,Interior,8,6,8,6,Turismo,Casco Historico. Plaza Mayor. Palacio de los Golfines de Abajo.,10,1,8,10,1
+Trujillo,Extremadura,Caceres,Rural,Interior,8,6,7,9,Descanso,Plaza Mayor. Palacios y Casas Consistoriales. Iglesia de Santa Maria La Mayor.,3,4,4,3,3
+Valencia de Alcantara,Extremadura,Caceres,Rural,Interior,8,7,6,7,Descanso,Casco Antiguo. Barrio judio-gotico. Iglesia de Nuestra Senora de Rocamador.,4,10,7,9,1
+Granadilla,Extremadura,Caceres,Rural,Interior,9,6,8,6,Descanso,Castillo. Iglesia de Nuestra Senora de la Asuncion. Calles empedradas.,3,8,10,2,8
+Badajoz,Extremadura,Badajoz,Urbano,Interior,8,6,9,5,Turismo,Alcazaba. Puerta de Palmas. Plaza Alta.,7,9,5,7,5
+Alburquerque,Extremadura,Badajoz,Rural,Interior,8,7,8,7,Descanso,Casa Blancas. Casco Antiguo. Barrio gotico medieval.,7,1,7,9,4
+Fregenal de la Sierra,Extremadura,Badajoz,Rural,Interior,7,5,9,7,Descanso,Casitas Blancas. Castillo templario. Palacios y casas solariegas.,0,1,10,5,3
+Azuaga,Extremadura,Badajoz,Rural,Interior,8,6,5,8,Descanso,Casas hidalgas. Barrio Mudejar. Restos de Castillo y Alcazaba.,10,3,4,0,7
+Murcia,Murcia,Murcia,Urbano,Interior,8,6,5,9,Descanso,Catedral. Real Casino. Santuario de Nuestra Senora de la Fuensanta.,9,10,5,4,4
+Moratalla,Murcia,Murcia,Rural,Interior,7,9,7,6,Descanso,Castillo-Fortaleza. Iglesia de Nuestra Senora de la Asuncion. Antiguo Convento de San Francisco.,6,8,5,4,1
+Cehegin,Murcia,Murcia,Rural,Interior,6,8,7,7,Descanso,Casco Antiguo. Iglesia de Santa Maria Magdalena. Iglesia de la Soledad.,5,2,6,7,9
+Caravaca de la Cruz,Murcia,Murcia,Rural,Interior,8,9,7,6,Descanso,Basilica de la Vera Cruz. Iglesia de El Salvador. Convento de Santa Clara.,0,7,4,8,3
+Huelva,Andalucia,Huelva,Urbano,Costa,7,6,8,6,Turismo,Monasterio de La rabida. Muelle de las Carabelas. Muelle de la Compania del Rio Tinto.,2,3,4,2,3
+El Rocio y Almonte,Andalucia,Huelva,Rural,Interior,7,8,5,9,Turismo,Casa Consistorial. Iglesia de Nuestra Senora de la Asuncion. Parque Nacional de Donana.,6,4,7,8,2
+Cortegana,Andalucia,Huelva,Rural,Interior,9,5,7,6,Descanso,Castillo. Iglesia del Divino Salvador. Casco Urbano.,7,9,8,5,6
+Ayamonte,Andalucia,Huelva,Rural,Costa,8,7,9,6,Descanso,Parque Natural de las Marismas. Iglesia de Nuestra Senora de las Angustias. Parroquia del Salvador.,5,10,4,0,2
+Sevilla,Andalucia,Sevilla,Urbano,Interior,10,6,9,8,Turismo,Alcazar Real. Plaza de Espana. Catedral de Sevilla.,9,3,8,8,9
+Marchena,Andalucia,Sevilla,Rural,Interior,8,6,5,8,Descanso,Antigua Muralla. Iglesia de San Juan Bautista. Torre Octogonal de la Puerta de Carmona.,6,1,5,1,1
+Carmona,Andalucia,Sevilla,Rural,Interior,9,5,8,5,Descanso,Alcazar del Rey Don Pedro. Necropolias. Centro historico.,8,1,5,7,7
+Santiponce,Andalucia,Sevilla,Rural,Interior,7,9,6,7,Descanso,Ruinas de Italica. Monasterio de San Isidoro del Campo. Casco Antiguo.,4,0,9,9,8
+Cordoba,Andalucia,Cordoba,Urbano,Interior,10,5,9,7,Turismo,Mezquita-Catedral de Cordoba. Alcazar de los Reyes Catolicos. Palacio de Viana.,4,3,10,4,0
+Priego de Cordoba,Andalucia,Cordoba,Rural,Interior,7,8,5,8,Descanso,Castillo. Carnicerias Reales. Balcon de Adarve.,1,5,10,5,6
+Baena,Andalucia,Cordoba,Rural,Interior,7,8,6,7,Descanso,Monasterios de Madre de Dios. Casa de la Condesa. Iglesia de Santa Maria la Mayor.,6,1,4,1,9
+Cabra,Andalucia,Cordoba,Rural,Interior,8,6,7,5,Descanso,Castillo de los Condes de Cabra. El Circulo de la Amistad. Iglesia de San Juan de Dios.,4,4,5,6,7
+Jaen,Andalucia,Jaen,Urbano,Interior,8,3,7,5,Turismo,Castillo de Santa Catalina. Catedral. Banos arabes.,8,9,0,3,2
+Segura de la Sierra,Andalucia,Jaen,Rural,Interior,8,6,8,7,Descanso,Castillo. Fortaleza mudejar. Iglesia Parroquial de Nuestra Senora del Collado.,10,3,0,8,1
+Cazorla,Andalucia,Jaen,Rural,Interior,9,6,7,8,Descanso,Castillo de la Yedra. Iglesia de Santa Maria. Fuente de las Cadenas.,0,4,2,2,8
+Banos de la Encina,Andalucia,Jaen,Rural,Interior,6,8,5,8,Descanso,Casco antiguo. Castillo de Burgalimar. Iglesia de San Mateo Apostol.,6,5,8,0,10
+Cadiz,Andalucia,Cadiz,Urbano,Costa,8,6,8,5,Turismo,Catedral. Castillo de Santa Catalina. Parque Genoves.,9,7,2,2,4
+Arcos de la Frontera,Andalucia,Cadiz,Rural,Interior,8,5,6,7,Descanso,Palacio del Conde del aguila. Castillo de Arcos. Puerta de Matrera.,2,6,9,5,6
+Olvera,Andalucia,Cadiz,Rural,Interior,9,6,7,8,Descanso,Castillo. Santuario de Nuestra Senora de los Remedios. Casa de la Cilla.,0,0,7,0,1
+Vejer de la Frontera,Andalucia,Cadiz,Rural,Interior,10,7,9,5,Descanso,Castillo y sus murallas. Iglesia del Divino Salvador. Ermita de Nuestra Senora de la Ermita.,8,9,6,1,0
+Malaga,Andalucia,Malaga,Urbano,Costa,8,7,8,6,Turismo,Alcazaba. Catedral de la Encarnacion. Teatro Romano.,5,3,6,10,0
+Ronda,Andalucia,Malaga,Rural,Interior,9,9,5,8,Descanso,Puente Nuevo. Palacio del Rey Moro. Banos arabes.,5,10,10,5,4
+Frigiliana,Andalucia,Malaga,Rural,Interior,10,8,7,6,Descanso,Museo Arqueologico. Jardin Botanico de Santa Friora. Parqeu Natural de las Sierras.,8,5,9,5,9
+Nerja,Andalucia,Malaga,Rural,Costa,8,7,6,8,Descanso,Cuevas de Nerja. Playas del casco. Centro historico.,1,2,3,3,5
+Granada,Andalucia,Granada,Urbano,Interior,10,8,6,9,Turismo,Alhambra. Generalife. Catedral de Granada.,8,6,2,3,0
+Salobrena,Andalucia,Granada,Rural,Interior,8,7,8,7,Descanso,Fachadas blancas. Castillo arabe. Iglesia del Rosario.,6,9,4,3,1
+Bubion,Andalucia,Granada,Rural,Interior,8,9,7,8,Descanso,Casco Antiguo. Plaza Mayor. Barranco de Poqueira.,6,5,10,7,2
+Niguelas,Andalucia,Granada,Rural,Interior,7,8,6,8,Descanso,Falla de Niguelas. Casa-Palacio de las Zayas. Mirador de la Razuela.,0,1,9,2,8
+Almeria,Andalucia,Almeria,Urbano,Costa,8,7,9,6,Turismo,Conjunto de Alcazaba. Catedral de la Encarnacion.Playa del Zapillo.,2,7,9,3,4
+Mojacar,Andalucia,Almeria,Rural,Costa,8,8,10,8,Descanso,Iglesia de Santa Maria. Ermita de Nuestra Senora de los Dolores. El Torrejon.,6,1,7,8,3
+Agua Amarga,Andalucia,Almeria,Rural,Costa,9,9,7,8,Descanso,Mesa Roldan. Playa. Casco antiguo.,2,8,3,7,8
+Las Negras,Andalucia,Almeria,Rural,Costa,8,7,8,6,Descanso,Cala de San Pedro. Penon del Gitano. Caleta del Cuervo.,10,2,5,7,2
